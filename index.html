@@ -228,14 +228,19 @@
         
           <span itemprop="articleBody">
             
-              <p>#1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 BLock_copy方法 把内存拷贝到堆区，<br>2.block的内存释放一般都在调用的controller self 之前。<br>3.block参数里面传出NSMutableArray，不能直接用self 的成员变量 _dataArr = [responseArr mutableCopy]; 会导致循环引用<br>4 解决3的办法是， 写一个方法传递，如下调用<br>    __block typeof(self)weakSelf = self;<br>[weakSelf parseResponseArray: responseArr ];</p>
-<ul>
-<li><p>(void)parseResponseArray:(NSMutableArray *)responseArr {</p>
-<p> _dataArr = [responseArr mutableCopy];</p>
-</li>
-</ul>
-<p>}</p>
-<p>也就是说weakself 调用方法之后，就不会有循环引用问题。猜测是对self发送消息之后，内存已经出了block了。所有block可以被正常释放</p>
+              <p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，</p>
+<p> 2.block的内存释放由其自行控制，与controller无关。</p>
+<p> 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用<br> <code>_dataArr = [responseArr mutableCopy];</code><br> 4 解决3的办法是， 写一个方法传递，如下调用 </p>
+<pre><code>__block <span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;
+
+[weakSelf parseResponseArray: responseArr ];
+
+- (<span class="keyword">void</span>)parseResponseArray:(<span class="built_in">NSMutableArray</span> *)responseArr {
+
+    _dataArr = [responseArr mutableCopy];
+
+} 
+</code></pre><p>也就是说 weakself 调用方法之后，就不会有循环引用问题。猜测是对self发送消息之后，内存已经出了block了。所有block可以被正常释放,不会return任何变量</p>
 
             
           </span>
@@ -316,7 +321,10 @@
         
           <span itemprop="articleBody">
             
-              
+              <p>command + shift + P</p>
+<p>markdown Preview</p>
+<p>在线预览markdown效果</p>
+
             
           </span>
         
