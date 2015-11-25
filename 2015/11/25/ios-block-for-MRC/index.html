@@ -51,22 +51,17 @@
 
 
 
-<meta name="description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，
- 2.block的内存释放由其自行控制，与controller无关。
- 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的">
+<meta name="description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios block for MRC">
 <meta property="og:url" content="http://yoursite.com/2015/11/25/ios-block-for-MRC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，
- 2.block的内存释放由其自行控制，与controller无关。
- 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的">
-<meta property="og:updated_time" content="2015-11-25T13:55:36.000Z">
+<meta property="og:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
+<meta property="og:image" content="http://yoursite.com/images/2.png">
+<meta property="og:updated_time" content="2015-11-25T14:40:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios block for MRC">
-<meta name="twitter:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，
- 2.block的内存释放由其自行控制，与controller无关。
- 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的">
+<meta name="twitter:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
 
 
 
@@ -221,19 +216,15 @@
       
 
       
-        <span itemprop="articleBody"><p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，</p>
-<p> 2.block的内存释放由其自行控制，与controller无关。</p>
-<p> 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用<br> <code>_dataArr = [responseArr mutableCopy];</code><br> 4 解决3的办法是， 写一个方法传递，如下调用 </p>
+        <span itemprop="articleBody"><p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，<br> 2.block的内存释放由其自行控制，与controller无关。<br> 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用<br> <code>_dataArr = [responseArr mutableCopy];</code><br> 4 解决3的办法是， 写一个方法传递，如下调用 </p>
 <pre><code>__block <span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;
-
 [weakSelf parseResponseArray: responseArr ];
 
 - (<span class="keyword">void</span>)parseResponseArray:(<span class="built_in">NSMutableArray</span> *)responseArr {
-
     _dataArr = [responseArr mutableCopy];
-
-} 
+}
 </code></pre><p>也就是说 weakself 调用方法之后，就不会有循环引用问题。猜测是对self发送消息之后，内存已经出了block了。所有block可以被正常释放,不会return任何变量</p>
+<p>##这是一张测试图片<br><img src="images/2.png" alt=""></p>
 </span>
       
     </div>
