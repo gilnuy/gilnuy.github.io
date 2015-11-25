@@ -190,6 +190,94 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/25/ios-block-for-MRC/" itemprop="url">
+                  ios block for MRC
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-11-25T17:26:07+08:00" content="2015-11-25">
+              2015-11-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 BLock_copy方法 把内存拷贝到堆区，<br>2.block的内存释放一般都在调用的controller self 之前。<br>3.block参数里面传出NSMutableArray，不能直接用self 的成员变量 _dataArr = [responseArr mutableCopy]; 会导致循环引用<br>4 解决3的办法是， 写一个方法传递，如下调用<br>    __block typeof(self)weakSelf = self;<br>[weakSelf parseResponseArray: responseArr ];</p>
+<ul>
+<li><p>(void)parseResponseArray:(NSMutableArray *)responseArr {</p>
+<p> _dataArr = [responseArr mutableCopy];</p>
+</li>
+</ul>
+<p>}</p>
+<p>也就是说weakself 调用方法之后，就不会有循环引用问题。猜测是对self发送消息之后，内存已经出了block了。所有block可以被正常释放</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/16/网易新闻iOS版使用的开源组件/" itemprop="url">
                   网易新闻iOS版使用的开源组件
                 </a>
@@ -484,7 +572,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
