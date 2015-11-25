@@ -51,22 +51,19 @@
 
 
 
-<meta name="description" content="command + shift + P
-markdown Preview
-在线预览markdown效果">
+<meta name="description" content="一、cellPLCCell           Base Cell ClassPLCHeaderCell     头像,昵称，时间，帖子内容PLCContentCell    昵称，帖子内容PLCFooterCell     话题，个股
+二、modelPLCModel  postId          splitid          topicType          content">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网易新闻iOS版使用的开源组件">
-<meta property="og:url" content="http://yoursite.com/2015/11/16/网易新闻iOS版使用的开源组件/index.html">
+<meta property="og:title" content="PLC">
+<meta property="og:url" content="http://yoursite.com/2015/11/25/PLC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="command + shift + P
-markdown Preview
-在线预览markdown效果">
-<meta property="og:updated_time" content="2015-11-25T09:32:36.000Z">
+<meta property="og:description" content="一、cellPLCCell           Base Cell ClassPLCHeaderCell     头像,昵称，时间，帖子内容PLCContentCell    昵称，帖子内容PLCFooterCell     话题，个股
+二、modelPLCModel  postId          splitid          topicType          content">
+<meta property="og:updated_time" content="2015-11-25T14:18:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网易新闻iOS版使用的开源组件">
-<meta name="twitter:description" content="command + shift + P
-markdown Preview
-在线预览markdown效果">
+<meta name="twitter:title" content="PLC">
+<meta name="twitter:description" content="一、cellPLCCell           Base Cell ClassPLCHeaderCell     头像,昵称，时间，帖子内容PLCContentCell    昵称，帖子内容PLCFooterCell     话题，个股
+二、modelPLCModel  postId          splitid          topicType          content">
 
 
 
@@ -78,7 +75,7 @@ markdown Preview
   };
 </script>
 
-  <title> 网易新闻iOS版使用的开源组件 | Hexo </title>
+  <title> PLC | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -188,7 +185,7 @@ markdown Preview
             
             
               
-                网易新闻iOS版使用的开源组件
+                PLC
               
             
           </h1>
@@ -197,8 +194,8 @@ markdown Preview
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-11-16T17:19:08+08:00" content="2015-11-16">
-              2015-11-16
+            <time itemprop="dateCreated" datetime="2015-11-25T22:03:13+08:00" content="2015-11-25">
+              2015-11-25
             </time>
           </span>
 
@@ -221,9 +218,12 @@ markdown Preview
       
 
       
-        <span itemprop="articleBody"><p>command + shift + P</p>
-<p>markdown Preview</p>
-<p>在线预览markdown效果</p>
+        <span itemprop="articleBody"><p>一、cell<br>PLCCell           Base Cell Class<br>PLCHeaderCell     头像,昵称，时间，帖子内容<br>PLCContentCell    昵称，帖子内容<br>PLCFooterCell     话题，个股</p>
+<p>二、model<br>PLCModel  postId<br>          splitid<br>          topicType<br>          content<br>          name<br>          cellStyle<br>          …</p>
+<p>三、controller<br>PLCCellFactory 统一创建cell，根据不通的cellstyle创建cell，简化控制器的复杂度。<br>换句话说，根据数据源，实例化cell给控制器</p>
+<p>ViewController<br>控制器通过factory获取cell，传入相应的model，刷新cell数据</p>
+<p>四、request<br>1.PLCBaseRequest<br>    基本请求类：发起请求，接收数据</p>
+<p>2.PLCPublicInfo<br>    接收BaseRequest数据，映射成我们业务逻辑需要的PLCModel<br>    同时计算好cellstyle以及楼层折叠和cell高度等业务处理。<br>1回调2使用block传递数据，block传递有个问题，同一时间一个请求只能回调一次，如果出现重复请求，后一个会覆盖前一个请求。<br>这个地方可以加一个判断机制，如果相同的请求在处理还没有回包，就不发送请求。</p>
 </span>
       
     </div>
@@ -235,17 +235,13 @@ markdown Preview
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/16/my-first-hexo-blog/" rel="next" title="Git 常用命令">
-                <i class="fa fa-chevron-left"></i> Git 常用命令
+              <a href="/2015/11/25/ios-block-for-MRC/" rel="next" title="ios block for MRC">
+                <i class="fa fa-chevron-left"></i> ios block for MRC
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/25/ios-block-for-MRC/" rel="prev" title="ios block for MRC">
-                ios block for MRC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
