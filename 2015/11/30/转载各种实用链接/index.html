@@ -51,16 +51,31 @@
 
 
 
-<meta name="description" content="详解 CALayer 和 UIView 的区别和联系">
+<meta name="description" content="详解 CALayer 和 UIView 的区别和联系
+
+UIView 可以接受 touch事件，CALayer不可以
+UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
+UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="转载各种实用链接">
 <meta property="og:url" content="http://yoursite.com/2015/11/30/转载各种实用链接/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="详解 CALayer 和 UIView 的区别和联系">
-<meta property="og:updated_time" content="2015-11-30T06:25:00.000Z">
+<meta property="og:description" content="详解 CALayer 和 UIView 的区别和联系
+
+UIView 可以接受 touch事件，CALayer不可以
+UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
+UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
+<meta property="og:updated_time" content="2015-11-30T06:43:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转载各种实用链接">
-<meta name="twitter:description" content="详解 CALayer 和 UIView 的区别和联系">
+<meta name="twitter:description" content="详解 CALayer 和 UIView 的区别和联系
+
+UIView 可以接受 touch事件，CALayer不可以
+UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
+UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
 
 
 
@@ -216,6 +231,12 @@
 
       
         <span itemprop="articleBody"><p><a href="详解 CALayer 和 UIView 的区别和联系">详解 CALayer 和 UIView 的区别和联系</a></p>
+<ol>
+<li>UIView 可以接受 touch事件，CALayer不可以</li>
+<li>UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示</li>
+<li>UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:</li>
+<li>UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer<br><code>[CATransaction setDisableActions:animation];    //  YES-&gt;禁止隐式动画  NO-&gt;打开动画</code></li>
+</ol>
 </span>
       
     </div>

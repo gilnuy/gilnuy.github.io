@@ -229,6 +229,12 @@
           <span itemprop="articleBody">
             
               <p><a href="详解 CALayer 和 UIView 的区别和联系">详解 CALayer 和 UIView 的区别和联系</a></p>
+<ol>
+<li>UIView 可以接受 touch事件，CALayer不可以</li>
+<li>UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示</li>
+<li>UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:</li>
+<li>UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer<br><code>[CATransaction setDisableActions:animation];    //  YES-&gt;禁止隐式动画  NO-&gt;打开动画</code></li>
+</ol>
 
             
           </span>
