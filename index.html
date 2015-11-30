@@ -190,6 +190,91 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/30/UILable断字/" itemprop="url">
+                  UILable断字
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-11-30T16:54:48+08:00" content="2015-11-30">
+              2015-11-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p><a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel" target="_blank" rel="external">TTTAttributedLabel</a><br>可设置垂直顶部对齐，底部对齐，居中</p>
+<p>断字:<br><code>NSString *testStr = @&quot;QQ啊:回复QQ啊:dsahjkfhjkfhjkfdshkjdfshjkfdashjkdfhsjkhkdfshkjsdafhjkdsfahjfhjdhjkdsfhjkds&quot;;</code><br>iphone显示效果为:<br>   QQ啊:回复QQ<br>   啊:dsahjkfhjkfhjkfdshkjdfshjkfdashjkdfhsjkhkdfshkjsdafhjkdsfahjfhjdhjkdsfhjkds</p>
+<p>系统绘制文字时的断字功能，UILable，UITextView都是如此。</p>
+<p>Label具体绘制过程为:<br>CTFrameSetter 根据 AttibuteDictionary 和 view的frame 以及text，合成CTFrame，<br>CTFrame由大量的CTRun组成，每个CTRun定义了文字的内容，绘制区域，颜色，字体。</p>
+<p>CTFrame提供遍历CTLine的方法，不停的绘制CTLine<br>如果是最后一个CTLine，则为最后一行，判断结束符是…还是不要..</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/30/转载各种实用链接/" itemprop="url">
                   转载各种实用链接
                 </a>
@@ -749,7 +834,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
