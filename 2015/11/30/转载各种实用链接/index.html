@@ -52,30 +52,27 @@
 
 
 <meta name="description" content="详解 CALayer 和 UIView 的区别和联系
-
 UIView 可以接受 touch事件，CALayer不可以
 UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
 UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
-UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATran">
 <meta property="og:type" content="article">
 <meta property="og:title" content="转载各种实用链接">
 <meta property="og:url" content="http://yoursite.com/2015/11/30/转载各种实用链接/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="详解 CALayer 和 UIView 的区别和联系
-
 UIView 可以接受 touch事件，CALayer不可以
 UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
 UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
-UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
-<meta property="og:updated_time" content="2015-11-30T06:43:36.000Z">
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATran">
+<meta property="og:updated_time" content="2015-12-01T02:39:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转载各种实用链接">
 <meta name="twitter:description" content="详解 CALayer 和 UIView 的区别和联系
-
 UIView 可以接受 touch事件，CALayer不可以
 UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示
 UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:
-UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATra">
+UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer[CATran">
 
 
 
@@ -230,12 +227,20 @@ UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALaye
       
 
       
-        <span itemprop="articleBody"><p><a href="详解 CALayer 和 UIView 的区别和联系">详解 CALayer 和 UIView 的区别和联系</a></p>
-<ol>
+        <span itemprop="articleBody"><h3 id="详解_CALayer_和_UIView_的区别和联系"><a href="详解 CALayer 和 UIView 的区别和联系">详解 CALayer 和 UIView 的区别和联系</a></h3><ol>
 <li>UIView 可以接受 touch事件，CALayer不可以</li>
 <li>UIView 主要工作是内容的组织者，CALayer主要工作是绘制和显示</li>
 <li>UIView 修改非CALayer属性时，会触发隐式动画，如果要关闭可以使用该方法:</li>
 <li>UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALayer<br><code>[CATransaction setDisableActions:animation];    //  YES-&gt;禁止隐式动画  NO-&gt;打开动画</code></li>
+</ol>
+<h3 id="IOS界面流畅度优化方案"><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&amp;mid=401307836&amp;idx=1&amp;sn=d4105ac1560bac661d703c1b54ccce5e&amp;scene=23&amp;srcid=1201zLC0YoUosvJMJ3lpjoIC#rd" target="_blank" rel="external">IOS界面流畅度优化方案</a></h3><p>Index</p>
+<ol>
+<li>演示项目</li>
+<li>屏幕显示图像的原理</li>
+<li>卡顿产生的原因和解决方案<br> CPU 资源消耗原因和解决方案<br> GPU 资源消耗原因和解决方案</li>
+<li>AsyncDisplayKit<br> ASDK 的由来<br> ASDK 的资料<br> ASDK 的基本原理<br> ASDK 的图层预合成<br> ASDK 异步并发操作<br> Runloop 任务分发</li>
+<li>微博 Demo 性能优化技巧<br> 预排版<br> 预渲染<br> 异步绘制<br> 全局并发控制<br> 更高效的异步图片加载<br> 其他可以改进的地方</li>
+<li>如何评测界面的流畅度</li>
 </ol>
 </span>
       
@@ -372,7 +377,7 @@ UIView 实现CALayer的CALayerDelegate，UIView将要绘制的东西传给CALaye
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#详解_CALayer_和_UIView_的区别和联系"><span class="nav-number">1.</span> <span class="nav-text">详解 CALayer 和 UIView 的区别和联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOS界面流畅度优化方案"><span class="nav-number">2.</span> <span class="nav-text">IOS界面流畅度优化方案</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
