@@ -190,6 +190,87 @@
             
               
                 
+                <a class="post-title-link" href="/2015/12/04/UIView-部分圆角/" itemprop="url">
+                  UIView 部分圆角
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-12-04T09:36:02+08:00" content="2015-12-04">
+              2015-12-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p><a href="http://blog.csdn.net/reylen/article/details/22038607" target="_blank" rel="external">转载，原文地址</a></p>
+<h3 id="UIView_自定义位置圆角">UIView 自定义位置圆角</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> (<span class="title">RectCorner</span>)  </span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">@end</span>  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIView</span> (<span class="title">RectCorner</span>)  </span></span><br><span class="line">- (<span class="keyword">void</span>)setCornerOnTop &#123;  </span><br><span class="line">    <span class="built_in">UIBezierPath</span> *maskPath;  </span><br><span class="line">    maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:<span class="keyword">self</span><span class="variable">.bounds</span>  </span><br><span class="line">                                     byRoundingCorners:(<span class="built_in">UIRectCornerTopLeft</span> | <span class="built_in">UIRectCornerTopRight</span>)  </span><br><span class="line">                                           cornerRadii:<span class="built_in">CGSizeMake</span>(<span class="number">10.0</span>f, <span class="number">10.0</span>f)];  </span><br><span class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc] init];  </span><br><span class="line">    maskLayer<span class="variable">.frame</span> = <span class="keyword">self</span><span class="variable">.bounds</span>;  </span><br><span class="line">    maskLayer<span class="variable">.path</span> = maskPath<span class="variable">.CGPath</span>;  </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.layer</span><span class="variable">.mask</span> = maskLayer;  </span><br><span class="line">    [maskLayer release];  </span><br><span class="line">&#125;  </span><br><span class="line">- (<span class="keyword">void</span>)setCornerOnBottom &#123;  </span><br><span class="line">    <span class="built_in">UIBezierPath</span> *maskPath;  </span><br><span class="line">    maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:<span class="keyword">self</span><span class="variable">.bounds</span>  </span><br><span class="line">                                     byRoundingCorners:(<span class="built_in">UIRectCornerBottomLeft</span> | <span class="built_in">UIRectCornerBottomRight</span>)  </span><br><span class="line">                                           cornerRadii:<span class="built_in">CGSizeMake</span>(<span class="number">10.0</span>f, <span class="number">10.0</span>f)];  </span><br><span class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc] init];  </span><br><span class="line">    maskLayer<span class="variable">.frame</span> = <span class="keyword">self</span><span class="variable">.bounds</span>;  </span><br><span class="line">    maskLayer<span class="variable">.path</span> = maskPath<span class="variable">.CGPath</span>;  </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.layer</span><span class="variable">.mask</span> = maskLayer;  </span><br><span class="line">    [maskLayer release];  </span><br><span class="line">&#125;  </span><br><span class="line">- (<span class="keyword">void</span>)setAllCorner &#123;  </span><br><span class="line">    <span class="built_in">UIBezierPath</span> *maskPath;  </span><br><span class="line">    maskPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:<span class="keyword">self</span><span class="variable">.bounds</span>  </span><br><span class="line">                                          cornerRadius:<span class="number">10.0</span>];  </span><br><span class="line">    <span class="built_in">CAShapeLayer</span> *maskLayer = [[<span class="built_in">CAShapeLayer</span> alloc] init];  </span><br><span class="line">    maskLayer<span class="variable">.frame</span> = <span class="keyword">self</span><span class="variable">.bounds</span>;  </span><br><span class="line">    maskLayer<span class="variable">.path</span> = maskPath<span class="variable">.CGPath</span>;  </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.layer</span><span class="variable">.mask</span> = maskLayer;  </span><br><span class="line">    [maskLayer release];  </span><br><span class="line">&#125;  </span><br><span class="line">- (<span class="keyword">void</span>)setNoneCorner&#123;  </span><br><span class="line">    <span class="keyword">self</span><span class="variable">.layer</span><span class="variable">.mask</span> = <span class="literal">nil</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/30/UILable断字/" itemprop="url">
                   UILable断字
                 </a>
@@ -842,7 +923,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
