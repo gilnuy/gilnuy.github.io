@@ -6,33 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>粒子效果 - 六月里的辣椒</title>
+    <title>深入理解CALyer - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="UIEffectDesigner是一个第三方的粒子动画制作工具（工具下载地址http://www.touch-code-magazine.com/uieffectdesigner.
-使用这个mac工具，把自己想要的粒子效果调好，点击file-&amp;gt;save as，自动保存为ped格式文件，导入xcode工程，引入ped文件。
-12UIEffectDesignerView* effectView">
+    <meta name="description" content="sublayers:英文详细介绍CATextLayer:封装了UILabel相关的文字绘制功能CATransformLayer:抽象Layer，无法显示自己的content，只能封装转换相关的属性CAGradientLayer:渐变平滑layer，处理多个颜色之间的平滑渐变CAReplicatorLayerCAScrollLayerCATiledLayerCAEmitterLayerCAEAGLL">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="粒子效果">
-<meta property="og:url" content="http://yoursite.com/2015/12/05/粒子效果/index.html">
+<meta property="og:title" content="深入理解CALyer">
+<meta property="og:url" content="http://yoursite.com/2015/12/07/深入理解CALyer/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="UIEffectDesigner是一个第三方的粒子动画制作工具（工具下载地址http://www.touch-code-magazine.com/uieffectdesigner.
-使用这个mac工具，把自己想要的粒子效果调好，点击file-&amp;gt;save as，自动保存为ped格式文件，导入xcode工程，引入ped文件。
-12UIEffectDesignerView* effectView">
-<meta property="og:image" content="http://yanlj.qiniudn.com/下雪设置页面.png">
-<meta property="og:image" content="http://yanlj.qiniudn.com/下雪模拟器.png">
-<meta property="og:updated_time" content="2015-12-11T08:38:05.000Z">
+<meta property="og:description" content="sublayers:英文详细介绍CATextLayer:封装了UILabel相关的文字绘制功能CATransformLayer:抽象Layer，无法显示自己的content，只能封装转换相关的属性CAGradientLayer:渐变平滑layer，处理多个颜色之间的平滑渐变CAReplicatorLayerCAScrollLayerCATiledLayerCAEmitterLayerCAEAGLL">
+<meta property="og:updated_time" content="2015-12-11T12:16:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="粒子效果">
-<meta name="twitter:description" content="UIEffectDesigner是一个第三方的粒子动画制作工具（工具下载地址http://www.touch-code-magazine.com/uieffectdesigner.
-使用这个mac工具，把自己想要的粒子效果调好，点击file-&amp;gt;save as，自动保存为ped格式文件，导入xcode工程，引入ped文件。
-12UIEffectDesignerView* effectView">
+<meta name="twitter:title" content="深入理解CALyer">
+<meta name="twitter:description" content="sublayers:英文详细介绍CATextLayer:封装了UILabel相关的文字绘制功能CATransformLayer:抽象Layer，无法显示自己的content，只能封装转换相关的属性CAGradientLayer:渐变平滑layer，处理多个颜色之间的平滑渐变CAReplicatorLayerCAScrollLayerCATiledLayerCAEmitterLayerCAEAGLL">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
+    
+        <meta property="og:image" content="/2015/12/07/深入理解CALyer/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2015/12/07/深入理解CALyer/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -197,13 +192,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            粒子效果
+            深入理解CALyer
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Dec 05 2015 14:37:52 GMT+0800">
+    <time itemprop="datePublished" content="Mon Dec 07 2015 16:37:51 GMT+0800">
 	
-		    Dec 05, 2015
+		    Dec 07, 2015
     	
     </time>
     
@@ -212,11 +207,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>UIEffectDesigner是一个第三方的粒子动画制作工具（工具下载地址<a href="http://www.touch-code-magazine.com/uieffectdesigner" target="_blank" rel="external">http://www.touch-code-magazine.com/uieffectdesigner</a>.</p>
-<p>使用这个mac工具，把自己想要的粒子效果调好，点击file-&gt;save as，自动保存为ped格式文件，导入xcode工程，引入ped文件。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIEffectDesignerView</span>* effectView = [<span class="built_in">UIEffectDesignerView</span> effectWithFile:<span class="string">@"下雪.ped"</span>];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.view</span> addSubview:effectView];</span><br></pre></td></tr></table></figure>
-<p>见效果图:</p>
-<p><img src="http://yanlj.qiniudn.com/下雪设置页面.png" alt="利用mac程序根据你要的效果设定参数"><br><img src="http://yanlj.qiniudn.com/下雪模拟器.png" alt="mac程序设定效果图"></p>
+            <p>sublayers:<br><a href="https://gist.github.com/JeOam/94e833bcefd738d805cc" target="_blank" rel="external">英文详细介绍</a><br>CATextLayer:封装了UILabel相关的文字绘制功能<br>CATransformLayer:抽象Layer，无法显示自己的content，只能封装转换相关的属性<br>CAGradientLayer:渐变平滑layer，处理多个颜色之间的平滑渐变<br>CAReplicatorLayer<br>CAScrollLayer<br>CATiledLayer<br>CAEmitterLayer<br>CAEAGLLayer<br>AVPlayerLayer</p>
 
             
                 
@@ -231,7 +222,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/"  data-tooltip="深入理解CALyer">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -239,7 +230,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/" data-tooltip="IOS_视图实现圆角效果的三种方法及比较">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/05/粒子效果/" data-tooltip="粒子效果">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -254,17 +245,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -306,7 +297,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/"  data-tooltip="深入理解CALyer">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -314,7 +305,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/" data-tooltip="IOS_视图实现圆角效果的三种方法及比较">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/05/粒子效果/" data-tooltip="粒子效果">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -329,17 +320,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -365,17 +356,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/05/粒子效果/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/07/深入理解CALyer/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
