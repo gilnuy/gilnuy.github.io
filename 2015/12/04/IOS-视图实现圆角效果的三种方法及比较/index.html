@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="null">
+<html lang="zh-cn">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -12,21 +12,21 @@
     
     <meta name="description" content="转载:IOS_视图实现圆角效果的三种方法及比较
 通过代码，至少有三种方法可以为视图加上圆角效果。附例子：https://github.com/weipin/RoundedCorner
-方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：12view.layer.cornerRadius = 8.0;view.layer.ma">
+方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="IOS_视图实现圆角效果的三种方法及比较">
 <meta property="og:url" content="http://yoursite.com/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
 <meta property="og:description" content="转载:IOS_视图实现圆角效果的三种方法及比较
 通过代码，至少有三种方法可以为视图加上圆角效果。附例子：https://github.com/weipin/RoundedCorner
-方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：12view.layer.cornerRadius = 8.0;view.layer.ma">
+方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：">
 <meta property="og:image" content="http://yanlj.qiniudn.com/baobao.png">
-<meta property="og:updated_time" content="2015-12-11T08:38:38.000Z">
+<meta property="og:updated_time" content="2015-12-18T08:34:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOS_视图实现圆角效果的三种方法及比较">
 <meta name="twitter:description" content="转载:IOS_视图实现圆角效果的三种方法及比较
 通过代码，至少有三种方法可以为视图加上圆角效果。附例子：https://github.com/weipin/RoundedCorner
-方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：12view.layer.cornerRadius = 8.0;view.layer.ma">
+方法一、layer.cornerRadius第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：">
     
     
     
@@ -207,7 +207,7 @@
     <div class="post-meta">
     <time itemprop="datePublished" content="Fri Dec 04 2015 09:53:18 GMT+0800">
 	
-		    Dec 04, 2015
+		    12月 04, 2015
     	
     </time>
     
@@ -218,7 +218,8 @@
         <div class="main-content-wrap">
             <p><a href="http://blog.sina.com.cn/s/blog_671d2e4f0101cxpl.html" target="_blank" rel="external">转载:IOS_视图实现圆角效果的三种方法及比较</a></p>
 <p>通过代码，至少有三种方法可以为视图加上圆角效果。附例子：<br><a href="https://github.com/weipin/RoundedCorner" target="_blank" rel="external">https://github.com/weipin/RoundedCorner</a></p>
-<h3 id="方法一、layer-cornerRadius">方法一、layer.cornerRadius</h3><p>第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.layer.cornerRadius = 8.0<span class="comment">;</span></span><br><span class="line">view.layer.masksToBounds = YES<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="方法一、layer-cornerRadius">方法一、layer.cornerRadius</h3><p>第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：<br><a id="more"></a></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.layer.cornerRadius = 8.0<span class="comment">;</span></span><br><span class="line">view.layer.masksToBounds = YES<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>缺点是会有2次rending passes。首先off-screen画出带圆角的图，然后在视图上画第二次。</p>
 <h3 id="方法二、通过UIBezierPath对象设置带圆角的作图区域">方法二、通过UIBezierPath对象设置带圆角的作图区域</h3><p>这种方法的好处是只有一次rending pass，是三种方法中效率最高的。缺点是需要override视图。代码如下：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line"><span class="built_in">CGRect</span> bounds = <span class="keyword">self</span><span class="variable">.bounds</span>;</span><br><span class="line"></span><br><span class="line">[[<span class="built_in">UIColor</span> whiteColor] set];</span><br><span class="line"><span class="built_in">UIRectFill</span>(bounds);</span><br><span class="line"></span><br><span class="line">[[<span class="built_in">UIBezierPath</span> bezierPathWithRoundedRect:rect cornerRadius:<span class="number">8.0</span>] addClip];</span><br><span class="line"></span><br><span class="line">[<span class="keyword">self</span><span class="variable">.image</span> drawInRect:bounds];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="方法三、通过另一张mask图创建新图">方法三、通过另一张mask图创建新图</h3><p>首先需要一张mask图，然后将这张mask图和原图合成，得到带圆角的新图。效率和方法一类似，合成新图等同于在off-screen作图。该方法的优点是可以不局限于圆角，全凭mask图控制。</p>

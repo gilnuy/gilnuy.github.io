@@ -6,28 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>用CAShapeLayer与UIBezierPath画出想要的图形 - 六月里的辣椒</title>
+    <title>在线播放音频 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="转载:使用CAShapeLayer与UIBezierPath画出想要的图形
-核心代码:">
+    <meta name="description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
+计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="用CAShapeLayer与UIBezierPath画出想要的图形">
-<meta property="og:url" content="http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/index.html">
+<meta property="og:title" content="在线播放音频">
+<meta property="og:url" content="http://yoursite.com/2015/12/18/在线播放音频/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="转载:使用CAShapeLayer与UIBezierPath画出想要的图形
-核心代码:">
-<meta property="og:updated_time" content="2015-12-18T08:34:02.000Z">
+<meta property="og:description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
+计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
+<meta property="og:updated_time" content="2015-12-18T08:28:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用CAShapeLayer与UIBezierPath画出想要的图形">
-<meta name="twitter:description" content="转载:使用CAShapeLayer与UIBezierPath画出想要的图形
-核心代码:">
+<meta name="twitter:title" content="在线播放音频">
+<meta name="twitter:description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
+计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
+    
+        <meta property="og:image" content="/2015/12/18/在线播放音频/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2015/12/18/在线播放音频/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -192,13 +195,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            用CAShapeLayer与UIBezierPath画出想要的图形
+            在线播放音频
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Dec 04 2015 09:47:04 GMT+0800">
+    <time itemprop="datePublished" content="Fri Dec 18 2015 14:46:23 GMT+0800">
 	
-		    12月 04, 2015
+		    12月 18, 2015
     	
     </time>
     
@@ -207,9 +210,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="http://blog.csdn.net/volcan1987/article/details/9969455" target="_blank" rel="external">转载:使用CAShapeLayer与UIBezierPath画出想要的图形</a></p>
-<p>核心代码:<br>  <a id="more"></a></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="typename">void</span>)setTrack  </span><br><span class="line">&#123;  </span><br><span class="line">    _trackPath = [UIBezierPath <span class="string">bezierPathWithArcCenter:</span>self.center <span class="string">radius:</span>(self.bounds.size.width - _progressWidth)/ <span class="number">2</span> <span class="string">startAngle:</span><span class="number">0</span> <span class="string">endAngle:</span>M_PI * <span class="number">2</span> <span class="string">clockwise:</span>YES];;  </span><br><span class="line">    _trackLayer.path = _trackPath.CGPath;  </span><br><span class="line">&#125;  </span><br><span class="line">- (<span class="typename">void</span>)setProgress  </span><br><span class="line">&#123;  </span><br><span class="line">    _progressPath = [UIBezierPath <span class="string">bezierPathWithArcCenter:</span>self.center <span class="string">radius:</span>(self.bounds.size.width - _progressWidth)/ <span class="number">2</span> <span class="string">startAngle:</span>- M_PI_2 <span class="string">endAngle:</span>(M_PI * <span class="number">2</span>) * _progress - M_PI_2 <span class="string">clockwise:</span>YES];  </span><br><span class="line">    _progressLayer.path = _progressPath.CGPath;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>参考连接:<a href="http://msching.github.io/blog/2014/07/09/audio-in-ios-3/" target="_blank" rel="external">http://msching.github.io/blog/2014/07/09/audio-in-ios-3/</a></p>
+<h3 id="计算总时长">计算总时长</h3><p>计算时长Duration<br>获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。<br><a id="more"></a></p>
+<p>计算duration的公式如下：<br>1<br>double duration = (audioDataByteCount * 8) / bitRate<br>音频数据的字节总量audioDataByteCount可以通过kAudioFileStreamProperty_AudioDataByteCount获取，码率bitRate可以通过kAudioFileStreamProperty_BitRate获取也可以通过Parse一部分数据后计算平均码率来得到。<br>对于CBR数据来说用这样的计算方法的duration会比较准确，对于VBR数据就不好说了。所以对于VBR数据来说，最好是能够从ID3信息中获取到duration，获取不到再想办法通过计算平均码率的途径来计算duration。</p>
+
             
                 
 
@@ -223,7 +227,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/"  data-tooltip="IOS_视图实现圆角效果的三种方法及比较">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -231,7 +235,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/UIView-部分圆角/" data-tooltip="UIView 部分圆角">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/" data-tooltip="深入理解CALyer">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -246,17 +250,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -298,7 +302,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/"  data-tooltip="IOS_视图实现圆角效果的三种方法及比较">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -306,7 +310,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/UIView-部分圆角/" data-tooltip="UIView 部分圆角">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/" data-tooltip="深入理解CALyer">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -321,17 +325,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -357,17 +361,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/04/用CAShapeLayer与UIBezierPath画出想要的图形/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

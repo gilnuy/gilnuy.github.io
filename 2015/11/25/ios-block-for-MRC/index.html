@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="null">
+<html lang="zh-cn">
     
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
@@ -10,17 +10,17 @@
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
+    <meta name="description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ios block for MRC">
 <meta property="og:url" content="http://yoursite.com/2015/11/25/ios-block-for-MRC/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
+<meta property="og:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。">
 <meta property="og:image" content="http://yoursite.com/images/2.png">
-<meta property="og:updated_time" content="2015-12-11T08:38:42.000Z">
+<meta property="og:updated_time" content="2015-12-18T08:34:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios block for MRC">
-<meta name="twitter:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用 _dataArr = [responseArr mutableCopy]; 4 解决3的办法">
+<meta name="twitter:description" content="1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区， 2.block的内存释放由其自行控制，与controller无关。">
     
     
     
@@ -196,7 +196,7 @@
     <div class="post-meta">
     <time itemprop="datePublished" content="Wed Nov 25 2015 17:26:07 GMT+0800">
 	
-		    Nov 25, 2015
+		    11月 25, 2015
     	
     </time>
     
@@ -205,7 +205,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，<br> 2.block的内存释放由其自行控制，与controller无关。<br> 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用<br> <code>_dataArr = [responseArr mutableCopy];</code><br> 4 解决3的办法是， 写一个方法传递，如下调用 </p>
+            <p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，<br> 2.block的内存释放由其自行控制，与controller无关。<br> <a id="more"></a></p>
+<p> 3.block参数里面传出NSMutableArray，不能直接用 self 的成员变量接收,会导致循环引用<br> <code>_dataArr = [responseArr mutableCopy];</code><br> 4 解决3的办法是， 写一个方法传递，如下调用 </p>
 <pre><code>__block <span class="keyword">typeof</span>(<span class="keyword">self</span>)weakSelf = <span class="keyword">self</span>;
 [weakSelf parseResponseArray: responseArr ];
 
