@@ -6,31 +6,49 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>在线播放音频 - 六月里的辣椒</title>
+    <title>ios sqlite 文件加密 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
-计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
+    <meta name="description" content="免费，且开源:slcipher
+非常感谢作者：developernotes 
+刚开始加密一直失败。
+经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
+相关链接SQLCipher 命令行使用 后台加密
+update:目前已成功加密数据库文件,以下介绍详细步骤
+1.下载release版本源码 sqlcipher
+2.编译">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="在线播放音频">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/在线播放音频/index.html">
+<meta property="og:title" content="ios sqlite 文件加密">
+<meta property="og:url" content="http://yoursite.com/2015/12/22/ios-sqlite-文件加密/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
-计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
-<meta property="og:updated_time" content="2015-12-18T09:23:20.000Z">
+<meta property="og:description" content="免费，且开源:slcipher
+非常感谢作者：developernotes 
+刚开始加密一直失败。
+经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
+相关链接SQLCipher 命令行使用 后台加密
+update:目前已成功加密数据库文件,以下介绍详细步骤
+1.下载release版本源码 sqlcipher
+2.编译">
+<meta property="og:updated_time" content="2015-12-22T15:30:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在线播放音频">
-<meta name="twitter:description" content="参考连接:http://msching.github.io/blog/2014/07/09/audio-in-ios-3/
-计算总时长计算时长Duration获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。">
+<meta name="twitter:title" content="ios sqlite 文件加密">
+<meta name="twitter:description" content="免费，且开源:slcipher
+非常感谢作者：developernotes 
+刚开始加密一直失败。
+经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
+相关链接SQLCipher 命令行使用 后台加密
+update:目前已成功加密数据库文件,以下介绍详细步骤
+1.下载release版本源码 sqlcipher
+2.编译">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
     
-        <meta property="og:image" content="/2015/12/18/在线播放音频/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2015/12/18/在线播放音频/http://yanlj.qiniudn.com/test.jpg" />
+        <meta property="og:image" content="/2015/12/22/ios-sqlite-文件加密/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2015/12/22/ios-sqlite-文件加密/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -195,13 +213,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            在线播放音频
+            ios sqlite 文件加密
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Dec 18 2015 14:46:23 GMT+0800">
+    <time itemprop="datePublished" content="Tue Dec 22 2015 09:39:45 GMT+0800">
 	
-		    12月 18, 2015
+		    12月 22, 2015
     	
     </time>
     
@@ -210,10 +228,23 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>参考连接:<a href="http://msching.github.io/blog/2014/07/09/audio-in-ios-3/" target="_blank" rel="external">http://msching.github.io/blog/2014/07/09/audio-in-ios-3/</a></p>
-<h3 id="计算总时长">计算总时长</h3><p>计算时长Duration<br>获取时长的最佳方法是从ID3信息中去读取，那样是最准确的。如果ID3信息中没有存，那就依赖于文件头中的信息去计算了。<br><a id="more"></a></p>
-<p>计算duration的公式如下：<br>1<br>double duration = (audioDataByteCount * 8) / bitRate<br>音频数据的字节总量audioDataByteCount可以通过kAudioFileStreamProperty_AudioDataByteCount获取，码率bitRate可以通过kAudioFileStreamProperty_BitRate获取也可以通过Parse一部分数据后计算平均码率来得到。<br>对于CBR数据来说用这样的计算方法的duration会比较准确，对于VBR数据就不好说了。所以对于VBR数据来说，最好是能够从ID3信息中获取到duration，获取不到再想办法通过计算平均码率的途径来计算duration。</p>
-<p>获取ID3信息:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getDurationWithCompletion:(<span class="keyword">void</span>(^)(<span class="built_in">NSTimeInterval</span> duration))comp &#123;</span><br><span class="line">    <span class="built_in">NSDictionary</span> *options = [<span class="built_in">NSDictionary</span> dictionaryWithObject:[<span class="built_in">NSNumber</span> numberWithBool:<span class="literal">YES</span>] forKey:<span class="built_in">AVURLAssetPreferPreciseDurationAndTimingKey</span>];</span><br><span class="line">        <span class="built_in">AVURLAsset</span> *audioAsset = [[[<span class="built_in">AVURLAsset</span> alloc] initWithURL:_url options:options] autorelease];</span><br><span class="line">    <span class="built_in">NSArray</span> *keys = [[<span class="built_in">NSArray</span> alloc] initWithObjects:<span class="string">@"duration"</span>, <span class="literal">nil</span>];</span><br><span class="line">    [audioAsset loadValuesAsynchronouslyForKeys:keys completionHandler:^&#123;</span><br><span class="line">        <span class="built_in">NSError</span> *error = <span class="literal">nil</span>;</span><br><span class="line">        <span class="keyword">switch</span> ([audioAsset statusOfValueForKey:<span class="string">@"duration"</span> error:&amp;error]) &#123;</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">case</span> <span class="built_in">AVKeyValueStatusLoaded</span>:&#123;</span><br><span class="line">                CMTime audioDuration = audioAsset<span class="variable">.duration</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">NSTimeInterval</span> duration = CMTimeGetSeconds(audioDuration);</span><br><span class="line">                 <span class="keyword">if</span> (comp) &#123;</span><br><span class="line">                     <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(),^&#123;</span><br><span class="line">                         comp(duration);</span><br><span class="line">                     &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">                <span class="comment">// duration is now known, so we can fetch it without blocking</span></span><br><span class="line"><span class="comment">//                CMTime duration = [asset duration];</span></span><br><span class="line">                <span class="comment">// dispatch a block to the main thread that updates the display of asset duration in my user interface,</span></span><br><span class="line">                <span class="comment">// or do something else interesting with it</span></span><br><span class="line">            <span class="keyword">default</span>: ;</span><br><span class="line">                <span class="comment">// something went wrong; depending on what it was, we may want to dispatch a</span></span><br><span class="line">                <span class="comment">// block to the main thread to report th         e error</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>免费，且开源:<a href="https://github.com/sqlcipher/sqlcipher" target="_blank" rel="external">slcipher</a></p>
+<p>非常感谢作者：<a href="https://github.com/developernotes" target="_blank" rel="external">developernotes </a></p>
+<p>刚开始加密一直失败。</p>
+<p>经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。</p>
+<p>相关链接<a href="http://blog.csdn.net/sskicgah/article/details/37502433" target="_blank" rel="external">SQLCipher 命令行使用 后台加密</a></p>
+<p>update:<br>目前已成功加密数据库文件,以下介绍详细步骤</p>
+<p>1.下载release版本源码 <a href="https://github.com/sqlcipher/sqlcipher/releases/tag/v3.3.1" target="_blank" rel="external">sqlcipher</a></p>
+<p>2.编译源码，用于生成mac exec可执行文件。 这步骤很关键。折腾了很久才编译通过。<br>cd 到 sqlcipher-3.3.1 目录<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./configure --enable-tempstore=<span class="literal">yes</span> --<span class="keyword">with</span>-crypto-lib=commoncrypto <span class="string">\</span></span><br><span class="line">CFLAGS=<span class="string">"-DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2"</span> <span class="string">\</span></span><br><span class="line">LDFLAGS=<span class="string">"-framework Security"</span></span><br><span class="line"></span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>搞定。这个时候会看到目录多了一个sqlcipher 的可执行文件，其实他是个快捷方式。离开这个目录他啥也不是</p>
+<ol>
+<li>创建加密数据库文件<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./sqlcipher <span class="keyword">test</span>.<span class="keyword">db</span>  #创建一个<span class="keyword">db</span>文件  </span><br><span class="line">  </span><br><span class="line">sqlite&gt; PRAGMA key = '<span class="keyword">test</span>';  #设置密码  </span><br><span class="line">  </span><br><span class="line">sqlite&gt; .<span class="keyword">e</span>  #退出</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>好了，在目录里可以找到test.db文件了。试试吧，用一般的数据库工具是打不开的。提示数据库被加密。至此，创建加密数据库工作已完成</p>
+<p>4.下面介绍通过ios 工程操作 加密数据库，包括创建表等。<br><a href="https://www.zetetic.net/sqlcipher/ios-tutorial/" target="_blank" rel="external">如何集成到自己工程，图文并茂,很详细</a><br>直接使用该工程，集成到新的project，没有效果。加密失败<br>代码如下:<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 *db;</span><br><span class="line">      <span class="keyword">if</span> (sqlite3_open([path UTF8String], &amp;db) == SQLITE_OK) &#123;</span><br><span class="line">          <span class="keyword">const</span> <span class="keyword">char</span>* key = [<span class="string">@"123456"</span> UTF8String];</span><br><span class="line">          sqlite3_key(db, key, (<span class="keyword">int</span>)strlen(key));</span><br><span class="line">          <span class="keyword">if</span> (sqlite3_exec(db, (<span class="keyword">const</span> <span class="keyword">char</span>*) <span class="string">"SELECT count(*) FROM sqlite_master;"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>) == SQLITE_OK) &#123;</span><br><span class="line">              <span class="built_in">NSLog</span>(<span class="string">@"Password is correct, or a new database has been initialized"</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="built_in">NSLog</span>(<span class="string">@"Incorrect password!"</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">//创建表</span></span><br><span class="line">	<span class="built_in">NSString</span> *sql = <span class="string">@"CREATE TABLE IF NOT EXISTS testTable (id integer primary key AutoIncrement,col1 varchar(20),col2 varchar(20))"</span>;</span><br><span class="line">      <span class="keyword">if</span> (sqlite3_exec(db, sql<span class="variable">.UTF8String</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>) == SQLITE_OK) &#123;</span><br><span class="line">          <span class="built_in">NSLog</span>(<span class="string">@"create table success"</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">NSLog</span>(<span class="string">@"create table failure"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">          </span><br><span class="line">          sqlite3_close(db);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
+<p>log 结果是 <code>Password is correct, or a new database has been initialized</code></p>
+<p>说明操作成功。 </p>
 
             
                 
@@ -228,7 +259,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/22/ios-sqlite-文件加密/"  data-tooltip="ios sqlite 文件加密">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -236,7 +267,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/" data-tooltip="深入理解CALyer">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/18/在线播放音频/" data-tooltip="在线播放音频">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -251,17 +282,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -303,7 +334,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/22/ios-sqlite-文件加密/"  data-tooltip="ios sqlite 文件加密">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -311,7 +342,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/深入理解CALyer/" data-tooltip="深入理解CALyer">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/18/在线播放音频/" data-tooltip="在线播放音频">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -326,17 +357,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -362,17 +393,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/18/在线播放音频/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/12/22/ios-sqlite-文件加密/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
