@@ -14,10 +14,7 @@
 非常感谢作者：developernotes 
 刚开始加密一直失败。
 经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
-相关链接SQLCipher 命令行使用 后台加密
-update:目前已成功加密数据库文件,以下介绍详细步骤
-1.下载release版本源码 sqlcipher
-2.编译">
+相关链接SQLCipher 命令行使用 后台加密">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ios sqlite 文件加密">
 <meta property="og:url" content="http://yoursite.com/2015/12/22/ios-sqlite-文件加密/index.html">
@@ -26,29 +23,20 @@ update:目前已成功加密数据库文件,以下介绍详细步骤
 非常感谢作者：developernotes 
 刚开始加密一直失败。
 经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
-相关链接SQLCipher 命令行使用 后台加密
-update:目前已成功加密数据库文件,以下介绍详细步骤
-1.下载release版本源码 sqlcipher
-2.编译">
-<meta property="og:updated_time" content="2015-12-22T15:30:21.000Z">
+相关链接SQLCipher 命令行使用 后台加密">
+<meta property="og:updated_time" content="2015-12-22T15:34:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios sqlite 文件加密">
 <meta name="twitter:description" content="免费，且开源:slcipher
 非常感谢作者：developernotes 
 刚开始加密一直失败。
 经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。
-相关链接SQLCipher 命令行使用 后台加密
-update:目前已成功加密数据库文件,以下介绍详细步骤
-1.下载release版本源码 sqlcipher
-2.编译">
+相关链接SQLCipher 命令行使用 后台加密">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
-    
-        <meta property="og:image" content="/2015/12/22/ios-sqlite-文件加密/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2015/12/22/ios-sqlite-文件加密/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -233,6 +221,7 @@ update:目前已成功加密数据库文件,以下介绍详细步骤
 <p>刚开始加密一直失败。</p>
 <p>经过和作者沟通，sqlcipher不能直接操作一个已经有数据的db文件，建议通过sqlcpher mac exec 创建db文件。</p>
 <p>相关链接<a href="http://blog.csdn.net/sskicgah/article/details/37502433" target="_blank" rel="external">SQLCipher 命令行使用 后台加密</a></p>
+<a id="more"></a>
 <p>update:<br>目前已成功加密数据库文件,以下介绍详细步骤</p>
 <p>1.下载release版本源码 <a href="https://github.com/sqlcipher/sqlcipher/releases/tag/v3.3.1" target="_blank" rel="external">sqlcipher</a></p>
 <p>2.编译源码，用于生成mac exec可执行文件。 这步骤很关键。折腾了很久才编译通过。<br>cd 到 sqlcipher-3.3.1 目录<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./configure --enable-tempstore=<span class="literal">yes</span> --<span class="keyword">with</span>-crypto-lib=commoncrypto <span class="string">\</span></span><br><span class="line">CFLAGS=<span class="string">"-DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2"</span> <span class="string">\</span></span><br><span class="line">LDFLAGS=<span class="string">"-framework Security"</span></span><br><span class="line"></span><br><span class="line">make</span><br></pre></td></tr></table></figure></p>
