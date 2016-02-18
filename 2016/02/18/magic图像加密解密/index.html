@@ -6,23 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>ios性能优化技巧 - 六月里的辣椒</title>
+    <title>magic图像加密解密 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="转载:秦威的学习与分享 (多帖总结) iOS性能优化技巧1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。
-2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。">
+    <meta name="description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ios性能优化技巧">
-<meta property="og:url" content="http://yoursite.com/2016/02/17/ios性能优化技巧/index.html">
+<meta property="og:title" content="magic图像加密解密">
+<meta property="og:url" content="http://yoursite.com/2016/02/18/magic图像加密解密/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="转载:秦威的学习与分享 (多帖总结) iOS性能优化技巧1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。
-2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。">
-<meta property="og:updated_time" content="2016-02-17T07:07:04.000Z">
+<meta property="og:description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
+<meta property="og:updated_time" content="2016-02-18T08:42:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios性能优化技巧">
-<meta name="twitter:description" content="转载:秦威的学习与分享 (多帖总结) iOS性能优化技巧1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。
-2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。">
+<meta name="twitter:title" content="magic图像加密解密">
+<meta name="twitter:description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
     
     
     
@@ -192,13 +189,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ios性能优化技巧
+            magic图像加密解密
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Feb 17 2016 15:01:09 GMT+0800">
+    <time itemprop="datePublished" content="Thu Feb 18 2016 16:40:20 GMT+0800">
 	
-		    2月 17, 2016
+		    2月 18, 2016
     	
     </time>
     
@@ -207,31 +204,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/" target="_blank" rel="external">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
-<p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
-<p>3.不要阻塞主线程。<br><a id="more"></a><br>永远不要使主线程承担过多。因为UIKit在主线程上做所有工作，渲染，管理触摸反应，回应输入等都需要在它上面完成。大部分阻碍主进程的情形是你的app在做一些牵涉到读写外部资源的I/O操作，比如存储或者网络; 对于许多与UI刷新无关的操作，如创建一些与界面无关的对象等，最好也通过次线程来执行，以及对于页面流畅度要求非常高的页面，避免使用storyboard来创建对象，因其比较消耗资源；对于UIView或者CALayer的frame,bounds,transform等属性的改变，消耗的资源远大于他们其他的属性改变。</p>
-<p>4.使图片符合UIImageView的尺寸。不要在运行的时候再让UIImageView自行压缩，因为这样会降低运行时的性能。(注：手动压缩图片的方法，在context中使用drawInRect)</p>
-<p>5.选择合适的collection。 如：Array使用下标查找较快，但插入和删除较慢。set进行插入和删除很快。</p>
-<p>6.对常用的东西进行缓存。如从网上下载的需要经常显示的图片（这个在许多第三方框架如SDWebImage中都已经使用了）;（注：NSURLConnection会自动将HTTP请求返回数据缓存在本地）。对于一些下载下来，明显不需要访问网络再获取的图片，可以直接为其制造一个NSURLRequest,并使这个NSURLRequest仅从缓存读取数据。对于另外一些不涉及HTTP请求地址的数据，可以通过NSCache进行缓存。</p>
-<p>7.在非常需要渲染效率的极端情况下，对于Button等控件，应采用图片作为其image,这样可以减少渲染对性能和时间的消耗，因为图片已经存在，但是这样会增加APP boundle的体积。需要权衡。</p>
-<p>8.处理低内存警告。在收到内存警告时，清除对cache的强引用，没有当前显示需要的image，以及一些其他可以再创建的对象。</p>
-<p>9.重用一些高消耗的对象，如NSDateFormatter、NSCalender等。解决方法：可以将其作为property、甚至是静态变量作为单例在APP中使用。并且，NSDateFormatter的 setDateFormate也是非常消耗资源的一个操作。</p>
-<p>10.网络传输过来的数据，往往是json或xml字符串。直接将这些字符串转换成我们需要的数据结构（自定义类或者NSDictionary）,避免后续使用的时候还要做数据结构转换产生不必要的消耗。</p>
-<p>11.设置UIView的背景图片时，如果是整幅图，就采用addSubView一个UIImageView；如果是要重复平铺一个小图，就使用colorWithPatternImage，因为这个函数的设计上就是针对小图的，如果用于整幅大图来做背景，反而会消耗更多内存。</p>
-<p>12.UITableView的高度有时候会根据内容来自动计算，这种情况比较消耗资源。如果明知有哪几种高度的话，就将高度缓存重用；尽量不要在 cellForRowAtIndexPath:方法中做很多事情。不仅仅重用cell，对于section的header和footer也进行重用。</p>
-<p>13.在临时创建大量对象时，人工使用NSAutoreleasepool，例如，一个循环用于创建包含多个对象的数组，在循环体内，即可使用@autoreleasepool包裹创建代码。</p>
-<p>14.对于重复使用的图片使用imageNamed:来创建，对于不需重复使用的，使用imageWithContentsOfFile。</p>
-<p>15.对于排版复杂的文字或者图文混排，使用CoreText技术。（而不是一味地堆UILabel）</p>
-<p>16.在对渲染的效率要求较高的页面中，避免使用UILabel、UITextView等在主线程中进行排版和绘制的控件。应自定义文本控件，用TextKit或者CoreText进行文本异步绘制。另外，还有facebook的AsyncDisplayKit框架可以采用。</p>
-<p>17.将绘制图像放在次线程中执行，如在次线程中使用 CGContext进行画图，在主线程中 layer.contents = img。</p>
-<p>18.图片和视图的大小避免超过4096*4096，因为这是目前iphone5到iphone6p以及ipad仅仅通过GPU就直接处理的纹理尺寸上限，否则就GPU就会提交CPU先处理，这样开销很大。</p>
-<p>19.减少视图或者layer的层级数量，在有多个层级时，可以将多图合并成一张图，再渲染显示。</p>
-<p>20.网络优化相关：合并一些网络请求，避免频繁访问网络； 尝试预加载2-5分钟后的数据，数据控制在1-5MB之间；访问之前，先判断网络是否可用；</p>
-<p>21.节能相关：GPS在获取用户位置之后，就进行关闭，因为它非常耗电。</p>
-<p>22.避免浮点运算。</p>
-<p>23.避免使用NSString的stringWithFormat:,采用asprintf的C函数结合NSString的 stringWithString:来实现。</p>
-<p>24.关于后台运行。进入后台后，即尽量减少内存占用、释放所有的共享资源（如Calender或address book），因为iOS会kill后台中内存消耗最多的或者进入后台还占用共享资源的进程。</p>
-
+            <h3 id="直接上源码">直接上源码</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MagickWandGenesis();</span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = NewMagickWand();</span><br><span class="line">MagickReadImage(<span class="keyword">self</span><span class="variable">.wand</span>,[filepath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]); <span class="comment">//读取图像</span></span><br><span class="line">MagickEncipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>); <span class="comment">//加密</span></span><br><span class="line">MagickDecipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>);   <span class="comment">//解密</span></span><br><span class="line">MagickWriteImage(<span class="keyword">self</span><span class="variable">.wand</span>,[tempFilePath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]);<span class="comment">//输出结果图像</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = DestroyMagickWand(<span class="keyword">self</span><span class="variable">.wand</span>); <span class="comment">//内存回收</span></span><br><span class="line">MagickWandTerminus();</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -245,7 +218,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/magic图像加密解密/"  data-tooltip="magic图像加密解密">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -253,7 +226,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/16/headerdoc/" data-tooltip="headerdoc">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/17/ios性能优化技巧/" data-tooltip="ios性能优化技巧">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -268,17 +241,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -320,7 +293,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/18/magic图像加密解密/"  data-tooltip="magic图像加密解密">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -328,7 +301,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/16/headerdoc/" data-tooltip="headerdoc">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/17/ios性能优化技巧/" data-tooltip="ios性能优化技巧">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -343,17 +316,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -379,17 +352,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/17/ios性能优化技巧/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

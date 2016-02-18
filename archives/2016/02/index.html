@@ -187,6 +187,45 @@
 <section class="postShorten-group main-content-wrap">
     
         
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2016/02/18/magic图像加密解密/">magic图像加密解密</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Feb 18 2016 16:40:20 GMT+0800">
+	
+		    2月 18, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <h3 id="直接上源码">直接上源码</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MagickWandGenesis();</span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = NewMagickWand();</span><br><span class="line">MagickReadImage(<span class="keyword">self</span><span class="variable">.wand</span>,[filepath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]); <span class="comment">//读取图像</span></span><br><span class="line">MagickEncipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>); <span class="comment">//加密</span></span><br><span class="line">MagickDecipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>);   <span class="comment">//解密</span></span><br><span class="line">MagickWriteImage(<span class="keyword">self</span><span class="variable">.wand</span>,[tempFilePath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]);<span class="comment">//输出结果图像</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = DestroyMagickWand(<span class="keyword">self</span><span class="variable">.wand</span>); <span class="comment">//内存回收</span></span><br><span class="line">MagickWandTerminus();</span><br></pre></td></tr></table></figure>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2016/02/18/magic图像加密解密/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
         <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
@@ -207,7 +246,7 @@
                 
                 
                     <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">(多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
+                        <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
 <p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
 <p>3.不要阻塞主线程。<br>
                         
