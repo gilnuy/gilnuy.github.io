@@ -6,20 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>magic图像加密解密 - 六月里的辣椒</title>
+    <title>起底多线程同步锁(iOS) - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
+    <meta name="description" content="转载:起底多线程同步锁(iOS)1、@synchronized(){}
+Objective-C同步语法能够实现对block内的代码片段加锁， 可以指定任意一个Objective-C对象(id指针)作为锁“标记”，该语法将“标记”理解为token；
+2、NSLock、NSRecursiveLock：
+典型的面向对象的锁，即同步锁类，遵循Objective-C的NSLocking协议接口，前者支持tr">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="magic图像加密解密">
-<meta property="og:url" content="http://yoursite.com/2016/02/18/magic图像加密解密/index.html">
+<meta property="og:title" content="起底多线程同步锁(iOS)">
+<meta property="og:url" content="http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
-<meta property="og:updated_time" content="2016-02-18T08:42:29.000Z">
+<meta property="og:description" content="转载:起底多线程同步锁(iOS)1、@synchronized(){}
+Objective-C同步语法能够实现对block内的代码片段加锁， 可以指定任意一个Objective-C对象(id指针)作为锁“标记”，该语法将“标记”理解为token；
+2、NSLock、NSRecursiveLock：
+典型的面向对象的锁，即同步锁类，遵循Objective-C的NSLocking协议接口，前者支持tr">
+<meta property="og:updated_time" content="2016-02-22T08:56:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="magic图像加密解密">
-<meta name="twitter:description" content="直接上源码12345678MagickWandGenesis();self.wand = NewMagickWand();MagickReadImage(self.wand,[filepath cStringUsingEncoding:NSASCIIStringEncoding]); //读取图像MagickEncipherImage(self.wand, &quot;123&quot;); //加密MagickDe">
+<meta name="twitter:title" content="起底多线程同步锁(iOS)">
+<meta name="twitter:description" content="转载:起底多线程同步锁(iOS)1、@synchronized(){}
+Objective-C同步语法能够实现对block内的代码片段加锁， 可以指定任意一个Objective-C对象(id指针)作为锁“标记”，该语法将“标记”理解为token；
+2、NSLock、NSRecursiveLock：
+典型的面向对象的锁，即同步锁类，遵循Objective-C的NSLocking协议接口，前者支持tr">
     
     
     
@@ -189,13 +198,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            magic图像加密解密
+            起底多线程同步锁(iOS)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Feb 18 2016 16:40:20 GMT+0800">
+    <time itemprop="datePublished" content="Mon Feb 22 2016 16:54:47 GMT+0800">
 	
-		    2月 18, 2016
+		    2月 22, 2016
     	
     </time>
     
@@ -204,7 +213,22 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="直接上源码">直接上源码</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MagickWandGenesis();</span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = NewMagickWand();</span><br><span class="line">MagickReadImage(<span class="keyword">self</span><span class="variable">.wand</span>,[filepath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]); <span class="comment">//读取图像</span></span><br><span class="line">MagickEncipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>); <span class="comment">//加密</span></span><br><span class="line">MagickDecipherImage(<span class="keyword">self</span><span class="variable">.wand</span>, <span class="string">"123"</span>);   <span class="comment">//解密</span></span><br><span class="line">MagickWriteImage(<span class="keyword">self</span><span class="variable">.wand</span>,[tempFilePath cStringUsingEncoding:<span class="built_in">NSASCIIStringEncoding</span>]);<span class="comment">//输出结果图像</span></span><br><span class="line"><span class="keyword">self</span><span class="variable">.wand</span> = DestroyMagickWand(<span class="keyword">self</span><span class="variable">.wand</span>); <span class="comment">//内存回收</span></span><br><span class="line">MagickWandTerminus();</span><br></pre></td></tr></table></figure>
+            <p><a href="http://www.cocoachina.com/ios/20160129/15170.html" target="_blank" rel="external">转载:起底多线程同步锁(iOS)</a><br>1、@synchronized(){}</p>
+<p>Objective-C同步语法能够实现对block内的代码片段加锁， 可以指定任意一个Objective-C对象(id指针)作为锁“标记”，该语法将“标记”理解为token；</p>
+<p>2、NSLock、NSRecursiveLock：</p>
+<p>典型的面向对象的锁，即同步锁类，遵循Objective-C的NSLocking协议接口，前者支持tryLock，后者支持递归(可重入)；</p>
+<p>3、NSCondition、NSConditionLock：</p>
+<p>基于信号量方式实现的锁对象，前者提供单独的信号量管理接口，相比后者用法上可以更为灵活，而后者在接口上更为直接、实用；<br><a id="more"></a><br>4、ANReadWriteLock、ANRecursiveRWLock：</p>
+<p>iOS/MacOS并没有提供读写锁，春哥尝试自己搞，Objective-C版的读写锁(ANLock)，遵循读写锁特性，前者写锁耗时较小，后者支持递归；</p>
+<p>5、pthread_mutex：</p>
+<p>POSIX标准的unix多线程库(pthread)中使用的互斥量，支持递归，需要特别说明的是信号机制pthread_cond_wait()同步方式也是依赖于该互斥量，pthread_cond_wait()本身并不具备同步能力；</p>
+<p>6、dispatch_semaphore：</p>
+<p>GCD用于控制多线程并发的信号量，允许通过wait/signal的信号事件控制并发执行的最大线程数，当最大线程数降级为1的时候则可当作同步锁使用，注意该信号量并不支持递归；</p>
+<p>7、OSSpinLock：</p>
+<p>iOS/MacOS自有的自旋锁，其特点是线程等待取锁时不进内核，线程因此不挂起，直接保持空转，这使得它的锁操作开销降得很低，OSSpinLock是不支持递归的；</p>
+<p>8、atomic(property) set/get：</p>
+<p>利用set/get接口的属性实现原子操作，进而确保“被共享”的变量在多线程中读写安全，这已经是能满足部分多线程同步要求；</p>
+
             
                 
 
@@ -218,7 +242,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/22/放肆地使用UIBezierPath和CAShapeLayer画各种图形/"  data-tooltip="放肆地使用UIBezierPath和CAShapeLayer画各种图形">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -226,7 +250,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/17/ios性能优化技巧/" data-tooltip="ios性能优化技巧">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/22/放肆地使用UIBezierPath和CAShapeLayer画各种图形/" data-tooltip="放肆地使用UIBezierPath和CAShapeLayer画各种图形">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -241,17 +265,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -293,7 +317,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/22/放肆地使用UIBezierPath和CAShapeLayer画各种图形/"  data-tooltip="放肆地使用UIBezierPath和CAShapeLayer画各种图形">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -301,7 +325,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/17/ios性能优化技巧/" data-tooltip="ios性能优化技巧">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/02/22/放肆地使用UIBezierPath和CAShapeLayer画各种图形/" data-tooltip="放肆地使用UIBezierPath和CAShapeLayer画各种图形">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -316,17 +340,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -352,17 +376,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/18/magic图像加密解密/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/02/22/起底多线程同步锁-iOS/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
