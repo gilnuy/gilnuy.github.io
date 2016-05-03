@@ -6,31 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>kCTForegroundColorAttributeName和NSForegroundColorAttributeName - 六月里的辣椒</title>
+    <title>git命令相关 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="最近在项目中遇到一个问题ios7以下的设备才会出现：
-attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变化。进过debug发现。kCTForegroundColorAttributeNameNSForegroundColorAttributeName这两个属性在ios7+的设备是等价的。但是在ios7-分别代表不同的属性。">
+    <meta name="description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
+2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
-<meta property="og:url" content="http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/index.html">
+<meta property="og:title" content="git命令相关">
+<meta property="og:url" content="http://yoursite.com/2016/04/28/git命令相关/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="最近在项目中遇到一个问题ios7以下的设备才会出现：
-attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变化。进过debug发现。kCTForegroundColorAttributeNameNSForegroundColorAttributeName这两个属性在ios7+的设备是等价的。但是在ios7-分别代表不同的属性。">
-<meta property="og:updated_time" content="2016-04-19T05:59:45.000Z">
+<meta property="og:description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
+2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
+<meta property="og:updated_time" content="2016-04-28T02:33:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
-<meta name="twitter:description" content="最近在项目中遇到一个问题ios7以下的设备才会出现：
-attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变化。进过debug发现。kCTForegroundColorAttributeNameNSForegroundColorAttributeName这两个属性在ios7+的设备是等价的。但是在ios7-分别代表不同的属性。">
+<meta name="twitter:title" content="git命令相关">
+<meta name="twitter:description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
+2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
     
-        <meta property="og:image" content="/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/http://yanlj.qiniudn.com/test.jpg" />
+        <meta property="og:image" content="/2016/04/28/git命令相关/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2016/04/28/git命令相关/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -195,13 +195,13 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            kCTForegroundColorAttributeName和NSForegroundColorAttributeName
+            git命令相关
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Apr 19 2016 13:45:30 GMT+0800">
+    <time itemprop="datePublished" content="Thu Apr 28 2016 10:24:54 GMT+0800">
 	
-		    4月 19, 2016
+		    4月 28, 2016
     	
     </time>
     
@@ -210,12 +210,8 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>最近在项目中遇到一个问题ios7以下的设备才会出现：</p>
-<p>attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变化。<br>进过debug发现。<br>kCTForegroundColorAttributeName<br>NSForegroundColorAttributeName<br>这两个属性在ios7+的设备是等价的。<br>但是在ios7-分别代表不同的属性。<br><a id="more"></a></p>
-<p>二 TTTAttibuteLabel 在初始化的时候设置的是kCTForegroundColorAttributeName属性。给 self.linkAttributes的</p>
-<p>但是外部传入的attibuteString是 NSForegroundColorAttributeName 属性，<br>导致在调用方法 addLinksWithTextCheckingResults 添加属性时<br>[mutableAttributedString addAttributes:attributes range:result.range];<br>无法正确添加.<br>PS：addAttributes 方法如果遇到已经有的属性，会用心的属性替换原来的属性。</p>
-<p>总结解决办法：<br>一、把TTTAttibuteLabel里面的属性改成和外部一致。<br>二、修改传入的attibuteString的属性</p>
-<p>我暂时用的是办法二，这样不影响全局。</p>
+            <p>1.根据tag号获取代码<br>git checkout -b branch_name tag_name</p>
+<p>2.根据commit号拉取代码<br>git fetch<br>git checkout -b branch_name commit_id</p>
 
             
                 
@@ -230,7 +226,7 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/28/git命令相关/"  data-tooltip="git命令相关">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -238,7 +234,7 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/03/ios-动态注入代码/" data-tooltip="ios 动态注入代码">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/" data-tooltip="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -253,17 +249,17 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -305,7 +301,7 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/28/git命令相关/"  data-tooltip="git命令相关">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -313,7 +309,7 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/03/03/ios-动态注入代码/" data-tooltip="ios 动态注入代码">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/" data-tooltip="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -328,17 +324,17 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -364,17 +360,17 @@ attibuteLabel 增加了自定的link，事件增加上去了。颜色没有变�
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
