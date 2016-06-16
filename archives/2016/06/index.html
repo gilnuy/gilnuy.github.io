@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>归档 - 六月里的辣椒</title>
+    <title>归档: 2016/6 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
     <meta name="description" content="期待">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="六月里的辣椒">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2016/06/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
 <meta property="og:description" content="期待">
 <meta name="twitter:card" content="summary">
@@ -187,102 +187,49 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2015/11/25/ios-block-for-MRC/">ios block for MRC</a>
+                                <a class="link-unstyled" href="/2016/06/16/ios对象和指针互转/">ios对象和指针互转</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Nov 25 2015 17:26:07 GMT+0800">
+    <time itemprop="datePublished" content="Thu Jun 16 2016 15:07:31 GMT+0800">
 	
-		    11月 25, 2015
+		    6月 16, 2016
     	
     </time>
     
 </div>
                 </div>
                 
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p> 1.block 内存默认分配在栈区，执行完之后会自动释放，如果想要不释放，可以使用 bLock_copy方法 把内存拷贝到堆区，<br> 2.block的内存释放由其自行控制，与controller无关。<br>
-                        
-                            <a href="/2015/11/25/ios-block-for-MRC/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
                     </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/11/16/网易新闻iOS版使用的开源组件/">网易新闻iOS版使用的开源组件</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Nov 16 2015 17:19:08 GMT+0800">
-	
-		    11月 16, 2015
-    	
-    </time>
-    
-</div>
-                </div>
+                    
                 
                 
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>command + shift + P</p>
-<p>markdown Preview</p>
-<p>在线预览markdown效果<br>
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <pre><code> <span class="comment">//取self指针地址</span>
+<span class="built_in">NSString</span> *fooString = [<span class="built_in">NSString</span> stringWithFormat: <span class="string">@"%ld"</span>, (<span class="keyword">long</span>)<span class="keyword">self</span>];
+<span class="keyword">long</span> address = [fooString  longLongValue];
+<span class="comment">//指针转对象</span>
+TestClasss *newInstance = (TestClasss *)address;
+<span class="comment">//测试对象是否成功</span>
+[TestClasss testFunc];
+</code></pre>
                         
-                            <a href="/2015/11/16/网易新闻iOS版使用的开源组件/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
                             
+
                         
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2015/11/16/my-first-hexo-blog/">Git 常用命令</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Nov 16 2015 13:55:42 GMT+0800">
-	
-		    11月 16, 2015
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>Git配置<br>git config –global user.name “robbin”<br>git config –global user.email “fankai@gmail.com”<br>git config –global color.ui true<br>git config –global alias.co checkout<br>git config –global alias.ci commit<br>git config –global alias.st status<br>git config –global alias.br branch<br>git config –global core.editor “mate -w”    # 设置Editor使用textmate<br>git config -l  # 列举所有配置<br>用户的git配置文件~/.gitconfig<br>
-                        
-                            <a href="/2015/11/16/my-first-hexo-blog/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
+                            <p>
+                                <a href="/2016/06/16/ios对象和指针互转/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
                         
                     </div>
                 
@@ -293,17 +240,8 @@
     <div class="pagination-bar">
     <ul class="pagination">
         
-        <li class="pagination-prev">
-            
-                <a class="btn btn--default btn--small" href="/archives/page/2/">
-            
-                <i class="fa fa-angle-left text-base icon-mr"></i>
-                    <span>上一页</span>
-            </a>
-        </li>
         
-        
-        <li class="pagination-number">第 3 页 共 3 页</li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 

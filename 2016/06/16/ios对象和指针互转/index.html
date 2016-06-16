@@ -6,31 +6,46 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>git命令相关 - 六月里的辣椒</title>
+    <title>ios对象和指针互转 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
-2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
+    <meta name="description" content="//取self指针地址
+NSString *fooString = [NSString stringWithFormat: @&quot;%ld&quot;, (long)self];
+long address = [fooString  longLongValue];
+//指针转对象
+TestClasss *newInstance = (TestClasss *)address;
+//测试对象是否成功
+[TestC">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="git命令相关">
-<meta property="og:url" content="http://yoursite.com/2016/04/28/git命令相关/index.html">
+<meta property="og:title" content="ios对象和指针互转">
+<meta property="og:url" content="http://yoursite.com/2016/06/16/ios对象和指针互转/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
-2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
-<meta property="og:updated_time" content="2016-04-28T02:33:50.000Z">
+<meta property="og:description" content="//取self指针地址
+NSString *fooString = [NSString stringWithFormat: @&quot;%ld&quot;, (long)self];
+long address = [fooString  longLongValue];
+//指针转对象
+TestClasss *newInstance = (TestClasss *)address;
+//测试对象是否成功
+[TestC">
+<meta property="og:updated_time" content="2016-06-16T07:08:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git命令相关">
-<meta name="twitter:description" content="1.根据tag号获取代码git checkout -b branch_name tag_name
-2.根据commit号拉取代码git fetchgit checkout -b branch_name commit_id">
+<meta name="twitter:title" content="ios对象和指针互转">
+<meta name="twitter:description" content="//取self指针地址
+NSString *fooString = [NSString stringWithFormat: @&quot;%ld&quot;, (long)self];
+long address = [fooString  longLongValue];
+//指针转对象
+TestClasss *newInstance = (TestClasss *)address;
+//测试对象是否成功
+[TestC">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
     
-        <meta property="og:image" content="/2016/04/28/git命令相关/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2016/04/28/git命令相关/http://yanlj.qiniudn.com/test.jpg" />
+        <meta property="og:image" content="/2016/06/16/ios对象和指针互转/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2016/06/16/ios对象和指针互转/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -195,13 +210,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            git命令相关
+            ios对象和指针互转
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Apr 28 2016 10:24:54 GMT+0800">
+    <time itemprop="datePublished" content="Thu Jun 16 2016 15:07:31 GMT+0800">
 	
-		    4月 28, 2016
+		    6月 16, 2016
     	
     </time>
     
@@ -210,9 +225,14 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>1.根据tag号获取代码<br>git checkout -b branch_name tag_name</p>
-<p>2.根据commit号拉取代码<br>git fetch<br>git checkout -b branch_name commit_id</p>
-
+            <pre><code> <span class="comment">//取self指针地址</span>
+<span class="built_in">NSString</span> *fooString = [<span class="built_in">NSString</span> stringWithFormat: <span class="string">@"%ld"</span>, (<span class="keyword">long</span>)<span class="keyword">self</span>];
+<span class="keyword">long</span> address = [fooString  longLongValue];
+<span class="comment">//指针转对象</span>
+TestClasss *newInstance = (TestClasss *)address;
+<span class="comment">//测试对象是否成功</span>
+[TestClasss testFunc];
+</code></pre>
             
                 
 
@@ -226,7 +246,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/16/ios对象和指针互转/"  data-tooltip="ios对象和指针互转">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -234,7 +254,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/" data-tooltip="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/28/git命令相关/" data-tooltip="git命令相关">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -249,17 +269,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -301,7 +321,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/06/16/ios对象和指针互转/"  data-tooltip="ios对象和指针互转">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -309,7 +329,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/19/kCTForegroundColorAttributeName和NSForegroundColorAttributeName/" data-tooltip="kCTForegroundColorAttributeName和NSForegroundColorAttributeName">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/04/28/git命令相关/" data-tooltip="git命令相关">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -324,17 +344,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -360,17 +380,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/04/28/git命令相关/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2016/06/16/ios对象和指针互转/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

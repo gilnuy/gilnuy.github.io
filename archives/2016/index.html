@@ -192,6 +192,57 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2016/06/16/ios对象和指针互转/">ios对象和指针互转</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Jun 16 2016 15:07:31 GMT+0800">
+	
+		    6月 16, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                    </div>
+                    
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <pre><code> <span class="comment">//取self指针地址</span>
+<span class="built_in">NSString</span> *fooString = [<span class="built_in">NSString</span> stringWithFormat: <span class="string">@"%ld"</span>, (<span class="keyword">long</span>)<span class="keyword">self</span>];
+<span class="keyword">long</span> address = [fooString  longLongValue];
+<span class="comment">//指针转对象</span>
+TestClasss *newInstance = (TestClasss *)address;
+<span class="comment">//测试对象是否成功</span>
+[TestClasss testFunc];
+</code></pre>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2016/06/16/ios对象和指针互转/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2016/04/28/git命令相关/">git命令相关</a>
                         
                     </h1>
