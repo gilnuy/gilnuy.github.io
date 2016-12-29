@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://oixt098xm.bkt.clouddn.com/6.jpg">
 <meta property="og:image" content="http://oixt098xm.bkt.clouddn.com/7.jpg">
 <meta property="og:image" content="http://oixt098xm.bkt.clouddn.com/8.jpg">
-<meta property="og:updated_time" content="2016-12-29T09:14:23.000Z">
+<meta property="og:updated_time" content="2016-12-29T09:17:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探究NSMutableArray的实现原理">
 <meta name="twitter:description" content="参考链接:NSMutableArray分析他的github主页
@@ -218,7 +218,7 @@
 <h3 id="古老的C数组:">古老的C数组:</h3><p>优点:查询速度很快，直接通过下表找到对应的值<br>缺点:修改、删除数据很慢，需要移动基于所有的其他的元素<br><a id="more"></a><br><img src="http://oixt098xm.bkt.clouddn.com/1.jpg" alt=""><br><img src="http://oixt098xm.bkt.clouddn.com/2.jpg" alt=""></p>
 <p>插入和删除一个元素，需要移动后面所有的元素</p>
 <p>改进的目标：实现快速增加，删除</p>
-<p>###NSMutableArray的内部数据结构如下:<br><img src="http://oixt098xm.bkt.clouddn.com/4.jpg" alt=""><br>几个主要变量:<br>offset: 有效数据起始位置偏移量<br>size:   实际占用的内存大小<br>used:   数组的实际的有效数据个数<br>*list:  实际内存的起始地址</p>
+<h3 id="NSMutableArray的内部数据结构如下:">NSMutableArray的内部数据结构如下:</h3><p><img src="http://oixt098xm.bkt.clouddn.com/4.jpg" alt=""><br>几个主要变量:<br>offset: 有效数据起始位置偏移量<br>size:   实际占用的内存大小<br>used:   数组的实际的有效数据个数<br>*list:  实际内存的起始地址</p>
 <p><img src="http://oixt098xm.bkt.clouddn.com/5.jpg" alt=""></p>
 <h3 id="删除元素">删除元素</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">[arr removeObjecAtIndex:0]</span><span class="comment">;</span></span><br><span class="line"><span class="title">[arr removeObjecAtIndex:0]</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <p>执行两次 remove的实现:<br><img src="http://oixt098xm.bkt.clouddn.com/6.jpg" alt=""><br>仅仅修改 offset即可，内存完全不需要移动。<br>那么问题来了，移走的这个元素的内存怎么释放的呢？</p>
