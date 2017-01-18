@@ -187,7 +187,7 @@
 <section class="postShorten-group main-content-wrap">
     
         
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
@@ -205,30 +205,23 @@
 </div>
                 </div>
                 
-                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
-                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
-                    </div>
-                    
                 
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p><a href="http://blog.sunnyxx.com/2014/04/02/objc_dig_arc_dealloc/" target="_blank" rel="external">参考链接</a></p>
-<p>大致意思：<br>1.ARC下对象的成员变量于编译器插入的.cxx_desctruct方法自动释放<br>2.ARC下[super dealloc]方法也由编译器自动插入,自动调用<br>3.dealloc内部有一步执行objc_clear_deallocating 方法将weak指向当前对象的变量都置为nil</p>
-
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.调用 -release ：引用计数变为零</span><br><span class="line"> <span class="keyword">*</span> 对象正在被销毁，生命周期即将结束.</span><br><span class="line"> <span class="keyword">*</span> 不能再有新的 __weak 弱引用，否则将指向 nil.</span><br><span class="line"> <span class="keyword">*</span> 调用 [self dealloc]</span><br><span class="line">2. 父类调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 继承关系中最直接继承的父类再调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 如果是 MRC 代码 则会手动释放实例变量们（iVars）</span><br><span class="line"> <span class="keyword">*</span> 继承关系中每一层的父类 都再调用 -dealloc</span><br><span class="line">3. NSObject 调 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 只做一件事：调用 Objective-C runtime 中的 object_dispose() 方法</span><br><span class="line">4. 调用 object_dispose()</span><br><span class="line"> <span class="keyword">*</span> 为 C++ 的实例变量们（iVars）调用 destructors</span><br><span class="line"> <span class="keyword">*</span> 为 ARC 状态下的 实例变量们（iVars） 调用 -release</span><br><span class="line"> <span class="keyword">*</span> 解除所有使用 runtime Associate方法关联的对象</span><br><span class="line"> <span class="keyword">*</span> 解除所有 __weak 引用</span><br><span class="line"> <span class="keyword">*</span> 调用 free()</span><br></pre></td></tr></table></figure>
                         
+                            <a href="/2017/01/18/dealloc内部原理/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
                             
-
-                        
-                        
-                            <p>
-                                <a href="/2017/01/18/dealloc内部原理/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
                         
                     </div>
                 
             </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                </div>
+                
             
         </article>
     
