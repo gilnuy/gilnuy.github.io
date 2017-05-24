@@ -192,6 +192,60 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2017/05/24/app冷启动/">app 冷启动 打开方式</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed May 24 2017 13:39:59 GMT+0800">
+	
+		    5月 24, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/code.jpg"/>
+                    </div>
+                    
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>##app 冷启动 打开方式:##<br><strong>Xcode</strong> 中 <em>Edit scheme -&gt; Run -&gt; Auguments</em> 将环境变量 <strong>DYLD_PRINT_STATISTICS</strong>  设为 1。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Total pre-main <span class="tag">time</span>:  <span class="number">74.37</span> milliseconds (<span class="number">100.0%</span>)   </span><br><span class="line">dylib loading <span class="tag">time</span>:  <span class="number">41.05</span> milliseconds (<span class="number">55.2%</span>)        </span><br><span class="line">      rebase/binding <span class="tag">time</span>:   <span class="number">8.10</span> milliseconds (<span class="number">10.9%</span>)   </span><br><span class="line">          ObjC setup <span class="tag">time</span>:   <span class="number">9.87</span> milliseconds (<span class="number">13.2%</span>)   </span><br><span class="line">         initializer <span class="tag">time</span>:  <span class="number">15.23</span> milliseconds (<span class="number">20.4%</span>)   </span><br><span class="line">         slowest intializers :</span><br><span class="line">           libSystem<span class="class">.B</span><span class="class">.dylib</span> :   <span class="number">6.58</span> milliseconds (<span class="number">8.8%</span>)</span><br><span class="line"> libBacktraceRecording<span class="class">.dylib</span> :   <span class="number">6.27</span> milliseconds (<span class="number">8.4%</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dylib loading time ：动态库加载时间</li>
+<li>rebase/binding time ：工程中的class，functions，category数量会影响这个时间</li>
+<li>ObjC setup time ：注册class selectors category </li>
+<li>initializer time ：+load方法</li>
+<li>libSystem.B.dylib :系统库加载时间</li>
+<li>libBacktraceRecording.dylib ：不知道是什么</li>
+</ul>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2017/05/24/app冷启动/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2017/01/24/KVO底层实现原理/">KVO底层实现原理</a>
                         
                     </h1>
@@ -541,45 +595,6 @@ TestClasss *newInstance = (TestClasss *)address;
 <p>.h文件内容如下：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSArray</span> (<span class="title">swArray</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)sw_objectAtIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSMutableArray</span> (<span class="title">swMutableArray</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)sw_objectAtIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line">- (<span class="keyword">void</span>)sw_insertObject:(<span class="keyword">id</span>)anObject atIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSMutableDictionary</span> (<span class="title">swMutableDictionary</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)sw_setObject:(<span class="keyword">id</span>)anObject forKey:(<span class="keyword">id</span>&lt;<span class="built_in">NSCopying</span>&gt;)aKey;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
                         
                             <a href="/2016/02/23/method-swizzl-示例/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/02/22/起底多线程同步锁-iOS/">起底多线程同步锁(iOS)</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Feb 22 2016 16:54:47 GMT+0800">
-	
-		    2月 22, 2016
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p><a href="http://www.cocoachina.com/ios/20160129/15170.html">转载:起底多线程同步锁(iOS)</a><br>1、@synchronized(){}</p>
-<p>Objective-C同步语法能够实现对block内的代码片段加锁， 可以指定任意一个Objective-C对象(id指针)作为锁“标记”，该语法将“标记”理解为token；</p>
-<p>2、NSLock、NSRecursiveLock：</p>
-<p>典型的面向对象的锁，即同步锁类，遵循Objective-C的NSLocking协议接口，前者支持tryLock，后者支持递归(可重入)；</p>
-<p>3、NSCondition、NSConditionLock：</p>
-<p>基于信号量方式实现的锁对象，前者提供单独的信号量管理接口，相比后者用法上可以更为灵活，而后者在接口上更为直接、实用；<br>
-                        
-                            <a href="/2016/02/22/起底多线程同步锁-iOS/" class="postShorten-excerpt_link link">
                                 阅读全文
                             </a>
                             

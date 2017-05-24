@@ -6,19 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>tags - 六月里的辣椒</title>
+    <title>归档: 2017/5 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
     <meta name="description" content="期待">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="六月里的辣椒">
+<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
 <meta property="og:description" content="期待">
-<meta property="og:updated_time" content="2015-12-21T07:18:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="六月里的辣椒">
 <meta name="twitter:description" content="期待">
     
     
@@ -183,118 +182,73 @@
                         hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
+
+<section class="postShorten-group main-content-wrap">
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            tags
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Feb 16 2017 11:35:50 GMT+0800">
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2017/05/24/app冷启动/">app 冷启动 打开方式</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed May 24 2017 13:39:59 GMT+0800">
 	
-		    2月 16, 2017
+		    5月 24, 2017
     	
     </time>
     
 </div>
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            
-            
+                </div>
                 
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/code.jpg"/>
+                    </div>
+                    
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>##app 冷启动 打开方式:##<br><strong>Xcode</strong> 中 <em>Edit scheme -&gt; Run -&gt; Auguments</em> 将环境变量 <strong>DYLD_PRINT_STATISTICS</strong>  设为 1。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Total pre-main <span class="tag">time</span>:  <span class="number">74.37</span> milliseconds (<span class="number">100.0%</span>)   </span><br><span class="line">dylib loading <span class="tag">time</span>:  <span class="number">41.05</span> milliseconds (<span class="number">55.2%</span>)        </span><br><span class="line">      rebase/binding <span class="tag">time</span>:   <span class="number">8.10</span> milliseconds (<span class="number">10.9%</span>)   </span><br><span class="line">          ObjC setup <span class="tag">time</span>:   <span class="number">9.87</span> milliseconds (<span class="number">13.2%</span>)   </span><br><span class="line">         initializer <span class="tag">time</span>:  <span class="number">15.23</span> milliseconds (<span class="number">20.4%</span>)   </span><br><span class="line">         slowest intializers :</span><br><span class="line">           libSystem<span class="class">.B</span><span class="class">.dylib</span> :   <span class="number">6.58</span> milliseconds (<span class="number">8.8%</span>)</span><br><span class="line"> libBacktraceRecording<span class="class">.dylib</span> :   <span class="number">6.27</span> milliseconds (<span class="number">8.4%</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dylib loading time ：动态库加载时间</li>
+<li>rebase/binding time ：工程中的class，functions，category数量会影响这个时间</li>
+<li>ObjC setup time ：注册class selectors category </li>
+<li>initializer time ：+load方法</li>
+<li>libSystem.B.dylib :系统库加载时间</li>
+<li>libBacktraceRecording.dylib ：不知道是什么</li>
+</ul>
 
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2017/05/24/app冷启动/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
             
-        </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/tags/index.html">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/tags/index.html">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/tags/index.html">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 页 共 1 页</li>
     </ul>
 </div>
 
-
-        
-            <section id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="page-undefined" data-title="tags" data-url="http://yoursite.com/tags/index.html"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'undefined'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-        
-    </div>
-</article>
+</section>
 
 
 
