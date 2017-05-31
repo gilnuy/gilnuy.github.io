@@ -191,6 +191,41 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2016/02/23/method-swizzl-示例/">method swizzl 示例</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 10:29:03 GMT+0800">
+	
+		    2月 23, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>使用方法：新建一个catogary，把下面代码分别拷贝到.h和.m文件中，<br>介绍:foundation框架的参数错误，数组越界等异常捕获，确保app不会崩溃。<br>方法：运行时技术，在运行时将系统方法替换为我们自己实现的方法<br>ps:本文只实现了foundation库的部分方法，其实还可以尝试实现UIKit的方法，实现页面数据和用户行为统计等</p>
+<p>.h文件内容如下：<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSArray</span> (<span class="title">swArray</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)sw_objectAtIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSMutableArray</span> (<span class="title">swMutableArray</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">id</span>)sw_objectAtIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line">- (<span class="keyword">void</span>)sw_insertObject:(<span class="keyword">id</span>)anObject atIndex:(<span class="built_in">NSUInteger</span>)index;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSMutableDictionary</span> (<span class="title">swMutableDictionary</span>)</span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)sw_setObject:(<span class="keyword">id</span>)anObject forKey:(<span class="keyword">id</span>&lt;<span class="built_in">NSCopying</span>&gt;)aKey;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure></p>
+                        
+                            <a href="/2016/02/23/method-swizzl-示例/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2016/02/22/起底多线程同步锁-iOS/">起底多线程同步锁(iOS)</a>
                         
                     </h1>
@@ -529,47 +564,6 @@
                     </div>
                 
             </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/">IOS_视图实现圆角效果的三种方法及比较</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Dec 04 2015 09:53:18 GMT+0800">
-	
-		    12月 04, 2015
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p><a href="http://blog.sina.com.cn/s/blog_671d2e4f0101cxpl.html">转载:IOS_视图实现圆角效果的三种方法及比较</a></p>
-<p>通过代码，至少有三种方法可以为视图加上圆角效果。附例子：<br><a href="https://github.com/weipin/RoundedCorner">https://github.com/weipin/RoundedCorner</a></p>
-<h3 id="方法一、layer-cornerRadius">方法一、layer.cornerRadius</h3><p>第一种方法最简单，通过层对象的cornerRadius属性实现圆角效果，代码如下：<br>
-                        
-                            <a href="/2015/12/04/IOS-视图实现圆角效果的三种方法及比较/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/baobao.png"/>
-                </div>
-                
             
         </article>
     
