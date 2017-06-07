@@ -187,6 +187,89 @@
 <section class="postShorten-group main-content-wrap">
     
         
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2017/06/07/Chisel笔记/">Chisel笔记</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 07 2017 15:12:08 GMT+0800">
+	
+		    6月 07, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <h3 id="安装chisel:">安装chisel:</h3><ul>
+<li>1.brew install chisel</li>
+<li>2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决</li>
+<li>3.最后link一步解决办法:sudo chown -R <code>whoami</code>:admin /usr/local/opt</li>
+</ul>
+                        
+                            <a href="/2017/06/07/Chisel笔记/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                </div>
+                
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2017/06/07/LLDB笔记/">LLDB笔记</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 07 2017 15:11:53 GMT+0800">
+	
+		    6月 07, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <h3 id="Expression_是lldb调试命令中最重要的命令">Expression 是lldb调试命令中最重要的命令</h3><ul>
+<li>1.<strong>打印内容</strong><br>expression -o – &lt;=&gt; po(po 是 expression -o – 的别名)<br>expression ==&gt; e
+                        
+                            <a href="/2017/06/07/LLDB笔记/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                </div>
+                
+            
+        </article>
+    
+        
         <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
@@ -329,13 +412,13 @@
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>1.<br>在main方法之前执行:<br>android：static代码块<br>ios：+（void）load；</p>
-<p>2.多态性实现<br>android: interface(接口),继承,加上重写方法<br>ios:protocol(类别)，继承，加上重写方法</p>
+                        <p>1.如何在main方法之前执行某段代码:<br>android：static代码块<br>ios：+（void）load；</p>
+<p>2.多态性实现<br>android: interface(接口),继承,加上重写方法<br>ios:protocol(协议)，继承，加上重写方法</p>
 <p>3.判断某个实例所属的class类型<br>android:isinstanceof<br>ios: iskindof</p>
 <p>4.数组 有序存放数组<br>android: arraylist，线程不安全，底层实现是数组，效率很高<br>         vecoter，线程安全，底层是数组，效率低<br>ios：NSMutableArray，线程不安全，底层实现是数组+循环buffer，效率很高</p>
-<p>5.set 存放唯一值<br>android：set,hasset<br>ios:NSSet,NSmutableSet</p>
+<p>5.set 存放唯一值<br>android：set,hashset<br>ios:NSSet,NSmutableSet</p>
 <p>6.键值对，字典， key都是唯一的。遍历起来ios感觉更方便</p>
-<p>android：map，hashmap，需要先把key通过 keyset()方法取到一个set中 再通过iterator（迭代器）来取到对应value<br>ios：NSMutableDictinory, 直接通过方法 allkeys, allvalues 获取所有的key或者value</p>
+<p>android：map，hashmap，需要先把key通过 keyset()方法取到一个set中 再通过iterator（迭代器）来取对应value<br>ios：NSMutableDictinory, 直接通过方法 allkeys, allvalues 获取所有的key或者value</p>
 
                         
                             

@@ -6,37 +6,37 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>android_vs_ios - 六月里的辣椒</title>
+    <title>Chisel笔记 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="1.如何在main方法之前执行某段代码:android：static代码块ios：+（void）load；
-2.多态性实现android: interface(接口),继承,加上重写方法ios:protocol(协议)，继承，加上重写方法
-3.判断某个实例所属的class类型android:isinstanceofios: iskindof
-4.数组 有序存放数组android: arraylis">
+    <meta name="description" content="安装chisel:
+1.brew install chisel
+2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决
+3.最后link一步解决办法:sudo chown -R whoami:admin /usr/local/opt">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="android_vs_ios">
-<meta property="og:url" content="http://yoursite.com/2017/05/31/android-vs-ios/index.html">
+<meta property="og:title" content="Chisel笔记">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/Chisel笔记/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="1.如何在main方法之前执行某段代码:android：static代码块ios：+（void）load；
-2.多态性实现android: interface(接口),继承,加上重写方法ios:protocol(协议)，继承，加上重写方法
-3.判断某个实例所属的class类型android:isinstanceofios: iskindof
-4.数组 有序存放数组android: arraylis">
-<meta property="og:updated_time" content="2017-06-01T01:00:37.000Z">
+<meta property="og:description" content="安装chisel:
+1.brew install chisel
+2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决
+3.最后link一步解决办法:sudo chown -R whoami:admin /usr/local/opt">
+<meta property="og:updated_time" content="2017-06-07T07:26:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android_vs_ios">
-<meta name="twitter:description" content="1.如何在main方法之前执行某段代码:android：static代码块ios：+（void）load；
-2.多态性实现android: interface(接口),继承,加上重写方法ios:protocol(协议)，继承，加上重写方法
-3.判断某个实例所属的class类型android:isinstanceofios: iskindof
-4.数组 有序存放数组android: arraylis">
+<meta name="twitter:title" content="Chisel笔记">
+<meta name="twitter:description" content="安装chisel:
+1.brew install chisel
+2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决
+3.最后link一步解决办法:sudo chown -R whoami:admin /usr/local/opt">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
     
-        <meta property="og:image" content="/2017/05/31/android-vs-ios/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/05/31/android-vs-ios/http://yanlj.qiniudn.com/test.jpg" />
+        <meta property="og:image" content="/2017/06/07/Chisel笔记/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/06/07/Chisel笔记/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -201,13 +201,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            android_vs_ios
+            Chisel笔记
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed May 31 2017 14:59:38 GMT+0800">
+    <time itemprop="datePublished" content="Wed Jun 07 2017 15:12:08 GMT+0800">
 	
-		    5月 31, 2017
+		    6月 07, 2017
     	
     </time>
     
@@ -216,13 +216,35 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>1.如何在main方法之前执行某段代码:<br>android：static代码块<br>ios：+（void）load；</p>
-<p>2.多态性实现<br>android: interface(接口),继承,加上重写方法<br>ios:protocol(协议)，继承，加上重写方法</p>
-<p>3.判断某个实例所属的class类型<br>android:isinstanceof<br>ios: iskindof</p>
-<p>4.数组 有序存放数组<br>android: arraylist，线程不安全，底层实现是数组，效率很高<br>         vecoter，线程安全，底层是数组，效率低<br>ios：NSMutableArray，线程不安全，底层实现是数组+循环buffer，效率很高</p>
-<p>5.set 存放唯一值<br>android：set,hashset<br>ios:NSSet,NSmutableSet</p>
-<p>6.键值对，字典， key都是唯一的。遍历起来ios感觉更方便</p>
-<p>android：map，hashmap，需要先把key通过 keyset()方法取到一个set中 再通过iterator（迭代器）来取对应value<br>ios：NSMutableDictinory, 直接通过方法 allkeys, allvalues 获取所有的key或者value</p>
+            <h3 id="安装chisel:">安装chisel:</h3><ul>
+<li>1.brew install chisel</li>
+<li>2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决</li>
+<li>3.最后link一步解决办法:sudo chown -R <code>whoami</code>:admin /usr/local/opt</li>
+</ul>
+<a id="more"></a>
+<p>查看chisel的安装目录<br>找到这里:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/opt/</span>chisel<span class="regexp">/libexec/</span>fblldb.py</span><br></pre></td></tr></table></figure></p>
+<p>找到这个文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.lldbinit</span><br></pre></td></tr></table></figure></p>
+<p>一般是没有的，自己创建一个:<br><figure class="highlight irpf90"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">touch</span> ~/.lldbinit</span><br></pre></td></tr></table></figure></p>
+<p>这个文件 lldb在启动的时候会默认加载<br>把这段代码贴进去:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==&gt; Caveats</span><br><span class="line">Add the following <span class="built_in">line</span> <span class="keyword">to</span> ~/.lldbinit <span class="keyword">to</span> load chisel when Xcode launche<span class="variable">s:</span></span><br><span class="line"> <span class="keyword">command</span> script import /usr/local/<span class="keyword">opt</span>/chisel/libexec/fblldb.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>我们是在lldb启动的时候import 了一个python文件。里面有很多命令的组合。<br>这样我们在lldb控制台用的时候就不要敲很多复杂的命令了。<br>比如:<br>打印view的层级:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [self<span class="class">.view</span> recursiveDescription]</span><br></pre></td></tr></table></figure>
+<p>现在只需要</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pviews</span><br></pre></td></tr></table></figure>
+<p>如果是vc层级呢？ </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pviews,pvc</span><br></pre></td></tr></table></figure>
+<p>是不是很叼?<br>接下来有个更叼的<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br><strong>visualize</strong></p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visualize <span class="keyword">self</span>.titleBar</span><br></pre></td></tr></table></figure>
+<p>会打印 self.titileBar， 效果会通过 <strong>预览</strong> 显示(看实际效果)<br>另外还可以看</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CALayer</span>，<span class="built_in">UIImage</span>，<span class="built_in">CGImageRef</span>,<span class="built_in">NSData</span>(image)</span><br></pre></td></tr></table></figure>
+<p>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>还有更叼的<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-</p>
+<ul>
+<li><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fv</span>  </span><br><span class="line">fvc</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>找到内存中的view和vc  (这个用来检测内存泄漏好的一笔)  </p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(lldb)</span> f<span class="title">vc quotation</span><br><span class="line">0</span>x<span class="number">7</span>fe<span class="number">08070</span>ca<span class="number">50</span> HTQuotatio<span class="label">nViewController</span></span><br></pre></td></tr></table></figure>
+<p>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>后面没有了，别再往下滑了</p>
+<p>-<br>-<br>-</p>
 
             
                 
@@ -237,7 +259,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/31/Studio快捷键/"  data-tooltip="Studio快捷键">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -245,7 +267,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/24/app冷启动/" data-tooltip="app 冷启动 打开方式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/LLDB笔记/" data-tooltip="LLDB笔记">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -260,17 +282,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -311,7 +333,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/31/Studio快捷键/"  data-tooltip="Studio快捷键">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -319,7 +341,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/24/app冷启动/" data-tooltip="app 冷启动 打开方式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/LLDB笔记/" data-tooltip="LLDB笔记">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -334,17 +356,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -370,17 +392,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/05/31/android-vs-ios/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/Chisel笔记/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

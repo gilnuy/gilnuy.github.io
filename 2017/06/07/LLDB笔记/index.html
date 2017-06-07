@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="六月里的辣椒">
+    <title>LLDB笔记 - 六月里的辣椒</title>
+    <meta name="author" content="running pig">
+    
+    
+    <meta name="description" content="Expression 是lldb调试命令中最重要的命令
+1.打印内容expression -o – &amp;lt;=&amp;gt; po(po 是 expression -o – 的别名)expression ==&amp;gt; e">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="LLDB笔记">
+<meta property="og:url" content="http://yoursite.com/2017/06/07/LLDB笔记/index.html">
+<meta property="og:site_name" content="六月里的辣椒">
+<meta property="og:description" content="Expression 是lldb调试命令中最重要的命令
+1.打印内容expression -o – &amp;lt;=&amp;gt; po(po 是 expression -o – 的别名)expression ==&amp;gt; e">
+<meta property="og:updated_time" content="2017-06-07T07:29:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LLDB笔记">
+<meta name="twitter:description" content="Expression 是lldb调试命令中最重要的命令
+1.打印内容expression -o – &amp;lt;=&amp;gt; po(po 是 expression -o – 的别名)expression ==&amp;gt; e">
+    
+    
+    
+        <meta property="og:image" content="/assets/images/head.jpg"/>
+    
+    
+        <meta property="og:image" content="/2017/06/07/LLDB笔记/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/06/07/LLDB笔记/http://yanlj.qiniudn.com/test.jpg" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">六月里的辣椒</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="/#about">
+        
+        
+            <img class="header-picture" src="/assets/images/head.jpg"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/head.jpg"/>
+            </a>
+            <span class="sidebar-profile-name">running pig</span>
+        </div>
+    
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/ "
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">首页</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/categories"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">分类</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/tags"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">标签</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/archives"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">归档</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link st-search-show-outputs"
+                         href="/#search"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">搜索</span>
+                </a>
+        </li>
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/#about"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">关于</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+    </ul>
+    
+        <ul class="sidebar-buttons">
+        
+            <li class="sidebar-button">
+                
+                    <a  class="sidebar-button-link "
+                         href="/atom.xml"
+                        
+                    >
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            LLDB笔记
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Jun 07 2017 15:11:53 GMT+0800">
+	
+		    6月 07, 2017
+    	
+    </time>
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h3 id="Expression_是lldb调试命令中最重要的命令">Expression 是lldb调试命令中最重要的命令</h3><ul>
+<li>1.<strong>打印内容</strong><br>expression -o – &lt;=&gt; po(po 是 expression -o – 的别名)<br>expression ==&gt; e<a id="more"></a>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lldb expression self.view</span><br><span class="line">(UIView *) $<span class="number">6</span> = <span class="number">0x00007fba7f786290</span></span><br><span class="line"></span><br><span class="line">lldb expression -o -- self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br><span class="line"></span><br><span class="line">lldb po self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.<strong>执行表达式</strong>  </li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lldb expression -- <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">lldb expression -- [<span class="built_in">CATansaction</span> flush];</span><br></pre></td></tr></table></figure>
+<pre><code>结果: <span class="keyword">self.view的背景颜色被成功修改成红色 </span>   
+</code></pre><h3 id="breakpoint_断点">breakpoint 断点</h3><ul>
+<li>1.<strong>添加断点</strong></li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lldb <span class="keyword">br</span> <span class="keyword">set</span> -<span class="keyword">n</span> viewWillAppear:</span><br></pre></td></tr></table></figure>
+<p> (给当前类的viewwllappear方法增加断点)<br> 给其他文件的viewWillAppear方法加断点 怎么做?</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">br <span class="operator"><span class="keyword">set</span> -<span class="keyword">f</span> HTMyMessageViewController.<span class="keyword">m</span> -<span class="keyword">n</span> viewWillAppear:</span></span><br></pre></td></tr></table></figure>
+<p> -f 指定文件， -n 指定方法  </p>
+<ul>
+<li><p>2.<strong>查看断点</strong><br>lldb br list   (会显示整个工程所有的断点信息)<br>可以用来查询工程有没有设断点<br>包含信息:文件路径,代码行数,触发次数(hit count)</p>
+</li>
+<li><p>3.<strong>br disable/enable</strong><br>(取消/打开全局断点) 一般我们不需要用，xcode工具栏自带了  </p>
+</li>
+<li><p>4.<strong>br delete</strong><br>删除断点,不带参数表示删除所有断点,xcode自带了<br>执行后会有个确认的操作，y/n   </p>
+</li>
+</ul>
+<h3 id="watchpoint_监听地址">watchpoint 监听地址</h3><ul>
+<li>1.<strong>添加断点</strong></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lldb wa <span class="operator"><span class="keyword">set</span> <span class="keyword">variable</span> _mainTable (监听当前tableview的地址变化)</span><br><span class="line">Watchpoint <span class="number">3</span> hit:</span><br><span class="line"><span class="keyword">old</span> <span class="keyword">value</span>: <span class="number">0x0000000000000000</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">value</span>: <span class="number">0x00007ff5ed12dc00</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>2.<strong>disable/enble/delete</strong><br>与 breakpoint 相同</p>
+<p><strong>总结:可以用来检测类中的某个成员变量是否被成功析构<br>初始化 会触发一次watchpoint，析构的时候也会触发一次</strong> </p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Watchpoint <span class="number">3</span> hit:  </span><br><span class="line">old value: <span class="number">0x00007ff5ed12dc00</span>   </span><br><span class="line"><span class="keyword">new</span> value: <span class="number">0x0000000000000000</span></span><br></pre></td></tr></table></figure>
+<h3 id="image_lookup_寻址_(im_loo)">image lookup 寻址 (im loo)</h3><ul>
+<li><p><strong>image lookup –address</strong><br>获取某个指针地址的代码所在位置<br>一般情况用不上，如果一个方法内有多个地方使用到 objectAtIndex方法，这个时候crash了 就比较有用了</p>
+<p>假如有一个crash堆栈如下:</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2017-06-05</span> <span class="number">14:49:20.09</span>1 tztHuaTaiZLMobile[<span class="number">80016:31108</span>69] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArrayI objectAtIndex:]: index 2 beyond bounds [0 .. 1]'</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">	0   CoreFoundation                      <span class="number">0x00000001</span>0dfd8d4b __exceptionPreprocess + 171</span><br><span class="line">	1   libobjc.<span class="keyword">A</span>.dylib                     <span class="number">0x00000001</span>0ca1521e objc_exception_throw + 48</span><br><span class="line">	2   CoreFoundation                      <span class="number">0x00000001</span>0df132bb -[__NSArrayI objectAtIndex:] + 155</span><br><span class="line">	3   tztHuaTaiZLMobile                   <span class="number">0x00000001</span><span class="number">0a425388</span> -[tztHuaTaiZLMobileDelegate HTLaunchManagerWillStartLaunch] + 696</span><br><span class="line">	4   tztHuaTaiZLMobile                   <span class="number">0x00000001</span>0a0499da -[HTLaunchManager launchWithWindow:launchOptions:delegate:] + 442</span><br><span class="line">	5   tztHuaTaiZLMobile                   <span class="number">0x00000001</span>0a4234ac -[tztHuaTaiZLMobileDelegate application:didFinishLaunchingWithOptions:] + 492</span><br><span class="line">	6   UIKit                               <span class="number">0x00000001</span><span class="number">109e03c2</span> -[UIApplication _handleDelegateCallbacksWithOptions:isSuspended:restoreState:] + 290</span><br><span class="line">	7   UIKit                               <span class="number">0x00000001</span><span class="number">109e1d47</span> -[UIApplication _callInitializationDelegatesForMainScene:transitionContext:] + 4236</span><br><span class="line">	8   UIKit                               <span class="number">0x00000001</span>109e80ed -[UIApplication _runWithMainScene:transitionContext:completion:] + 1731</span><br><span class="line">	9   UIKit                               <span class="number">0x00000001</span><span class="number">109e526</span>d -[UIApplication workspaceDidEndTransaction:] + 188</span><br><span class="line">	10  FrontBoardServices                  <span class="number">0x00000001</span>14cc46cb __FBSSERIALQUEUE_IS_CALLING_OUT_TO_A_BLOCK__ + 24</span><br><span class="line">	11  FrontBoardServices                  <span class="number">0x00000001</span>14cc4544 -[FBSSerialQueue _performNext] + 189</span><br><span class="line">	12  FrontBoardServices                  <span class="number">0x00000001</span>14cc48cd -[FBSSerialQueue _performNextFromRunLoopSource] + 45</span><br><span class="line">	13  CoreFoundation                      <span class="number">0x00000001</span>0df7d761 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17</span><br><span class="line">	14  CoreFoundation                      <span class="number">0x00000001</span>0df6298c __CFRunLoopDoSources0 + 556</span><br><span class="line">	15  CoreFoundation                      <span class="number">0x00000001</span>0df61e76 __CFRunLoopRun + 918</span><br><span class="line">	16  CoreFoundation                      <span class="number">0x00000001</span>0df61884 CFRunLoopRunSpecific + 420</span><br><span class="line">	17  UIKit                               <span class="number">0x00000001</span>109e3aea -[UIApplication _run] + 434</span><br><span class="line">	18  UIKit                               <span class="number">0x00000001</span><span class="number">109e9c68</span> UIApplicationMain + 159</span><br><span class="line">	19  tztHuaTaiZLMobile                   <span class="number">0x00000001</span>09cb24ff main + 111</span><br><span class="line">	20  libdyld.dylib                       <span class="number">0x00000001</span>13b0868d start + 1</span><br><span class="line">)                              <span class="number">0x00000001</span><span class="number">00353777</span> -[UIViewController view] + 29</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>执行命令：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ddlb image lookup -a <span class="number">0x00000001</span><span class="number">0a425388</span></span><br></pre></td></tr></table></figure></p>
+<p>得到结果:</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">Address</span>: <span class="tag">tztHuaTaiZLMobile</span><span class="attr_selector">[0x00000001007b0388]</span> (<span class="tag">tztHuaTaiZLMobile</span><span class="class">.__TEXT</span><span class="class">.__text</span> + 8053672)  </span><br><span class="line"><span class="tag">Summary</span>: <span class="tag">tztHuaTaiZLMobile</span>`<span class="tag">-</span><span class="attr_selector">[tztHuaTaiZLMobileDelegate HTLaunchManagerWillStartLaunch]</span> + 696 <span class="tag">at</span> <span class="tag">tztHuaTaiZLMobileDelegate</span><span class="class">.m</span><span class="pseudo">:497</span></span><br></pre></td></tr></table></figure>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/"  data-tooltip="Chisel笔记">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/31/Studio快捷键/" data-tooltip="Studio快捷键">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 running pig. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/"  data-tooltip="Chisel笔记">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/31/Studio快捷键/" data-tooltip="Studio快捷键">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/06/07/LLDB笔记/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <!-- Define author's picture -->
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/head.jpg"/>
+        
+            <h4 id="about-card-name">running pig</h4>
+        
+            <h5 id="about-card-bio"><p>running pig</p>
+</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>IOS Developer</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                nanjing
+            </h5>
+        
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+
+
+</html>
