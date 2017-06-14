@@ -18,7 +18,15 @@
 <meta property="og:site_name" content="六月里的辣椒">
 <meta property="og:description" content="Expression 是lldb调试命令中最重要的命令
 1.打印内容expression -o – &amp;lt;=&amp;gt; po(po 是 expression -o – 的别名)expression ==&amp;gt; e">
-<meta property="og:updated_time" content="2017-06-14T02:06:04.000Z">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/title.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/e-- flush.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/br-set-f-n.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/br-set-r.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/touchbegin.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/br-list.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/br-delete.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/07/LLDB笔记/wa-set.png">
+<meta property="og:updated_time" content="2017-06-14T07:21:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LLDB笔记">
 <meta name="twitter:description" content="Expression 是lldb调试命令中最重要的命令
@@ -210,43 +218,42 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="Expression_是lldb调试命令中最重要的命令">Expression 是lldb调试命令中最重要的命令</h3><ul>
+            <p><img src="/2017/06/07/LLDB笔记/title.jpg" alt="title"></p>
+<h3 id="Expression_是lldb调试命令中最重要的命令">Expression 是lldb调试命令中最重要的命令</h3><ul>
 <li>1.<strong>打印内容</strong><br>expression -o – &lt;=&gt; po(po 是 expression -o – 的别名)<br>expression ==&gt; e<a id="more"></a>
 </li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lldb expression self.view</span><br><span class="line">(UIView *) $<span class="number">6</span> = <span class="number">0x00007fba7f786290</span></span><br><span class="line"></span><br><span class="line">lldb expression -o -- self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br><span class="line"></span><br><span class="line">lldb po self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">expression self.view</span><br><span class="line">(UIView *) $<span class="number">6</span> = <span class="number">0x00007fba7f786290</span></span><br><span class="line"></span><br><span class="line">expression -o -- self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br><span class="line"></span><br><span class="line">po self.view</span><br><span class="line">&lt;UIView: <span class="number">0x7fba7f786290</span>; frame = (<span class="number">0</span> <span class="number">0</span>; <span class="number">568</span> <span class="number">320</span>); autoresize = W+H; gestureRecognizers = &lt;NSArray: <span class="number">0x600182e467b0</span>&gt;; layer = &lt;CALayer: <span class="number">0x6180e963e520</span>&gt;&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.<strong>执行表达式</strong>  </li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lldb expression -- <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">lldb expression -- [<span class="built_in">CATansaction</span> flush];</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">expression -- <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">expression -- [<span class="built_in">CATransaction</span> flush];</span><br></pre></td></tr></table></figure>
 <pre><code>结果: <span class="keyword">self.view的背景颜色被成功修改成红色 </span>   
-</code></pre><h3 id="breakpoint_断点">breakpoint 断点</h3><ul>
+</code></pre><p><img src="/2017/06/07/LLDB笔记/e-- flush.png" alt="e-- flush"></p>
+<h3 id="breakpoint_断点">breakpoint 断点</h3><ul>
 <li>1.<strong>添加断点</strong></li>
 </ul>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">br</span> <span class="keyword">set</span> -<span class="keyword">n</span> viewWillAppear:</span><br></pre></td></tr></table></figure>
-<p> (给当前类的viewwllappear方法增加断点)<br> 给其他文件的viewWillAppear方法加断点 怎么做?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">br <span class="operator"><span class="keyword">set</span> -<span class="keyword">f</span> HTMyMessageViewController.<span class="keyword">m</span> -<span class="keyword">n</span> viewWillAppear:</span></span><br></pre></td></tr></table></figure>
-<p> -f 指定文件， -n 指定方法  </p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">br</span> <span class="keyword">set</span> -r HTMyMessageViewContrller</span><br></pre></td></tr></table></figure>
-<p>-r 匹配设置断点，所有执行到 HTMyMessageViewContrller 相关的代码都会被打上断点</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">br</span> <span class="keyword">set</span> -<span class="keyword">n</span> viewDidLoad</span><br></pre></td></tr></table></figure>
+<p> (给当前类的viewDidLoad方法增加断点)<br> 给其他文件的viewDidLoad方法加断点 怎么做?</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">br <span class="operator"><span class="keyword">set</span> -<span class="keyword">f</span> SecondViewController.<span class="keyword">m</span> -<span class="keyword">n</span> viewDidLoad</span></span><br></pre></td></tr></table></figure>
+<p> -f 指定文件， -n 指定方法<br><img src="/2017/06/07/LLDB笔记/br-set-f-n.png" alt="br-set-f-n"><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">br</span> <span class="keyword">set</span> -r SecondViewController</span><br></pre></td></tr></table></figure></p>
+<p>-r 匹配设置断点，所有执行到 SecondViewController 相关的代码都会被打上断点<br><img src="/2017/06/07/LLDB笔记/br-set-r.png" alt="br-set-r"><br><img src="/2017/06/07/LLDB笔记/touchbegin.png" alt="touchbegin"></p>
 <ul>
-<li><p>2.<strong>查看断点</strong><br> br list   (会显示整个工程所有的断点信息)<br>可以用来查询工程有没有设断点<br>包含信息:文件路径,代码行数,触发次数(hit count)</p>
-</li>
+<li>2.<strong>查看断点</strong><br> br list   (会显示整个工程所有的断点信息)<br>可以用来查询工程有没有设断点<br>包含信息:文件路径,代码行数,触发次数(hit count)<br><img src="/2017/06/07/LLDB笔记/br-list.png" alt="br-list"></li>
 <li><p>3.<strong>br disable/enable</strong><br>(取消/打开全局断点) 一般我们不需要用，xcode工具栏自带了  </p>
 </li>
-<li><p>4.<strong>br delete</strong><br>删除断点,不带参数表示删除所有断点,xcode自带了<br>执行后会有个确认的操作，y/n   </p>
+<li><p>4.<strong>br delete</strong><br>删除断点,不带参数表示删除所有断点,xcode自带了<br>执行后会有个确认的操作，y/n<br><img src="/2017/06/07/LLDB笔记/br-delete.png" alt="br-delete"></p>
+<h3 id="watchpoint_监听地址">watchpoint 监听地址</h3></li>
+<li><p>1.<strong>添加断点</strong></p>
 </li>
 </ul>
-<h3 id="watchpoint_监听地址">watchpoint 监听地址</h3><ul>
-<li>1.<strong>添加断点</strong></li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wa <span class="operator"><span class="keyword">set</span> <span class="keyword">variable</span> _mainTable (监听当前tableview的地址变化)</span><br><span class="line">Watchpoint <span class="number">3</span> hit:</span><br><span class="line"><span class="keyword">old</span> <span class="keyword">value</span>: <span class="number">0x0000000000000000</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">value</span>: <span class="number">0x00007ff5ed12dc00</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">wa <span class="operator"><span class="keyword">set</span> <span class="keyword">variable</span> _mainTable (监听当前tableview的地址变化)</span><br><span class="line">Watchpoint created: Watchpoint <span class="number">1</span>: addr = <span class="number">0x7f808a1118d8</span> <span class="keyword">size</span> = <span class="number">8</span> state = enabled <span class="keyword">type</span> = w</span><br><span class="line">watchpoint spec = <span class="string">'_mainTable'</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">value</span>: <span class="number">0x0000000000000000</span></span><br><span class="line">    </span><br><span class="line">Watchpoint <span class="number">1</span> hit:</span><br><span class="line"><span class="keyword">old</span> <span class="keyword">value</span>: <span class="number">0x0000000000000000</span></span><br><span class="line"><span class="keyword">new</span> <span class="keyword">value</span>: <span class="number">0x00007f808881b000</span></span><br><span class="line"></span><br><span class="line">Watchpoint <span class="number">1</span> hit:  </span><br><span class="line"><span class="keyword">old</span> <span class="keyword">value</span>: <span class="number">0x00007f808881b000</span>   </span><br><span class="line"><span class="keyword">new</span> <span class="keyword">value</span>: <span class="number">0x0000000000000000</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>2.<strong>disable/enble/delete</strong><br>与 breakpoint 相同</p>
 <p><strong>总结:可以用来检测类中的某个成员变量是否被成功析构<br>初始化 会触发一次watchpoint，析构的时候也会触发一次</strong> </p>
 </li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Watchpoint <span class="number">3</span> hit:  </span><br><span class="line">old value: <span class="number">0x00007ff5ed12dc00</span>   </span><br><span class="line"><span class="keyword">new</span> value: <span class="number">0x0000000000000000</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2017/06/07/LLDB笔记/wa-set.png" alt="wa-set"></p>
 <h3 id="image_lookup_寻址_(im_loo)">image lookup 寻址 (im loo)</h3><ul>
 <li><p><strong>image lookup –address</strong><br>获取某个指针地址的代码所在位置<br>一般情况用不上，如果一个方法内有多个地方使用到 objectAtIndex方法，这个时候crash了 就比较有用了</p>
 <p>假如有一个crash堆栈如下:</p>
