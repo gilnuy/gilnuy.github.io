@@ -22,7 +22,7 @@
 1.brew install chisel
 2.中间会遇到一些usr/local文件夹下面的访问权限问题，只需要根据提示，都可解决
 3.最后link一步解决办法:sudo chown -R whoami:admin /usr/local/opt">
-<meta property="og:updated_time" content="2017-06-07T07:26:08.000Z">
+<meta property="og:updated_time" content="2017-06-14T02:16:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chisel笔记">
 <meta name="twitter:description" content="安装chisel:
@@ -223,26 +223,27 @@
 </ul>
 <a id="more"></a>
 <p>查看chisel的安装目录<br>找到这里:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/opt/</span>chisel<span class="regexp">/libexec/</span>fblldb.py</span><br></pre></td></tr></table></figure></p>
-<p>找到这个文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.lldbinit</span><br></pre></td></tr></table></figure></p>
-<p>一般是没有的，自己创建一个:<br><figure class="highlight irpf90"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">touch</span> ~/.lldbinit</span><br></pre></td></tr></table></figure></p>
-<p>这个文件 lldb在启动的时候会默认加载<br>把这段代码贴进去:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==&gt; Caveats</span><br><span class="line">Add the following <span class="built_in">line</span> <span class="keyword">to</span> ~/.lldbinit <span class="keyword">to</span> load chisel when Xcode launche<span class="variable">s:</span></span><br><span class="line"> <span class="keyword">command</span> script import /usr/local/<span class="keyword">opt</span>/chisel/libexec/fblldb.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>确认文件存在，后面会用到这个路径</p>
+<p>然后再找到这个文件：  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.lldbinit</span><br></pre></td></tr></table></figure>
+<p>一般是没有的，自己创建一个:  </p>
+<figure class="highlight irpf90"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">touch</span> ~/.lldbinit</span><br></pre></td></tr></table></figure>
+<p>解析一下：这个文件 是lldb在启动的时候会默认加载的<br>把这段代码贴进去:  </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">==&gt; Caveats</span><br><span class="line">Add the following <span class="built_in">line</span> <span class="keyword">to</span> ~/.lldbinit <span class="keyword">to</span> load chisel when Xcode launche<span class="variable">s:</span>  </span><br><span class="line"> <span class="keyword">command</span> script import /usr/local/<span class="keyword">opt</span>/chisel/libexec/fblldb.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
 <p>我们是在lldb启动的时候import 了一个python文件。里面有很多命令的组合。<br>这样我们在lldb控制台用的时候就不要敲很多复杂的命令了。<br>比如:<br>打印view的层级:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [self<span class="class">.view</span> recursiveDescription]</span><br></pre></td></tr></table></figure>
 <p>现在只需要</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pviews</span><br></pre></td></tr></table></figure>
-<p>如果是vc层级呢？ </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pviews,pvc</span><br></pre></td></tr></table></figure>
+<p>比如vc层级 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvc</span><br></pre></td></tr></table></figure>
 <p>是不是很叼?<br>接下来有个更叼的<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br><strong>visualize</strong></p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visualize <span class="keyword">self</span>.titleBar</span><br></pre></td></tr></table></figure>
-<p>会打印 self.titileBar， 效果会通过 <strong>预览</strong> 显示(看实际效果)<br>另外还可以看</p>
+<p>会打印 self.titileBar， 效果会通过 <strong>预览</strong> 显示(看实际效果)<br>另外还可以看这些类型对象的效果：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CALayer</span>，<span class="built_in">UIImage</span>，<span class="built_in">CGImageRef</span>,<span class="built_in">NSData</span>(image)</span><br></pre></td></tr></table></figure>
 <p>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>还有更叼的<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-</p>
-<ul>
-<li><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fv</span>  </span><br><span class="line">fvc</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">fv</span>  </span><br><span class="line">fvc</span><br></pre></td></tr></table></figure>
 <p>找到内存中的view和vc  (这个用来检测内存泄漏好的一笔)  </p>
-<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(lldb)</span> f<span class="title">vc quotation</span><br><span class="line">0</span>x<span class="number">7</span>fe<span class="number">08070</span>ca<span class="number">50</span> HTQuotatio<span class="label">nViewController</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fvc quotation</span><br><span class="line"><span class="number">0x7fe08070ca50</span> HTQuotationViewController</span><br></pre></td></tr></table></figure>
 <p>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>-<br>后面没有了，别再往下滑了</p>
 <p>-<br>-<br>-</p>
 
