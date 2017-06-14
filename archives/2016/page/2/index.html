@@ -209,7 +209,7 @@
                     <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
 <p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
-<p>3.不要阻塞主线程。<br>
+<p>3.不要阻塞主线程。<br></p>
                         
                             <a href="/2016/02/17/ios性能优化技巧/" class="postShorten-excerpt_link link">
                                 阅读全文
@@ -244,7 +244,7 @@
                 
                     <div class="postShorten-excerpt" itemprop="articleBody">
                         <p>本文主要介绍如何利用xcode自带工具headerdoc文档化代码</p>
-<h3 id="核心命令">核心命令</h3><p>headerdoc2html -o ~/Desktop/documentation *.h<br>gatherheaderdoc .<br><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a><br>
+<h3 id="核心命令">核心命令</h3><p>headerdoc2html -o ~/Desktop/documentation *.h<br>gatherheaderdoc .<br><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a><br></p>
                         
                             <a href="/2016/02/16/headerdoc/" class="postShorten-excerpt_link link">
                                 阅读全文
