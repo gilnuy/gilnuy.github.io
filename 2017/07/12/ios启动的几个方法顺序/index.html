@@ -6,25 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>分类 - 六月里的辣椒</title>
+    <title>ios启动的几个方法顺序 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="期待">
+    <meta name="description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="ios启动的几个方法顺序">
+<meta property="og:url" content="http://yoursite.com/2017/07/12/ios启动的几个方法顺序/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="期待">
-<meta property="og:updated_time" content="2017-06-14T08:27:08.000Z">
+<meta property="og:description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
+<meta property="og:updated_time" content="2017-07-12T03:21:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="期待">
+<meta name="twitter:title" content="ios启动的几个方法顺序">
+<meta name="twitter:description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
+    
+        <meta property="og:image" content="/2017/07/12/ios启动的几个方法顺序/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/07/12/ios启动的几个方法顺序/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -45,7 +51,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">六月里的辣椒</a>
@@ -69,7 +75,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -178,7 +184,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
@@ -189,13 +195,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            分类
+            ios启动的几个方法顺序
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jun 14 2017 16:27:08 GMT+0800">
+    <time itemprop="datePublished" content="Wed Jul 12 2017 11:19:27 GMT+0800">
 	
-		    6月 14, 2017
+		    7月 12, 2017
     	
     </time>
     
@@ -204,7 +210,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(<span class="variable">BOOL</span>)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application didFinishLaunchingWithOptions:<span class="params">(<span class="variable">NSDictionary</span> *)</span>launchOptions;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)app openURL:(<span class="built_in">NSURL</span> *)url options:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span>*, <span class="keyword">id</span>&gt; *)options;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(<span class="variable">BOOL</span>)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application openURL:<span class="params">(<span class="variable">NSURL</span> *)</span>url sourceApplication:<span class="params">(<span class="variable">NSString</span> *)</span>sourceApplication annotation:<span class="params">(id)</span>annotation</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application didReceiveRemoteNotification:<span class="params">(<span class="variable">NSDictionary</span> *)</span>userInfo</span></span><br></pre></td></tr></table></figure>
             
                 
 
@@ -226,7 +235,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/" data-tooltip="Chisel笔记">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -241,17 +250,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/categories/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/categories/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/categories/index.html">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -285,6 +294,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/" data-tooltip="Chisel笔记">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         <!-- Define author's picture -->

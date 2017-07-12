@@ -222,46 +222,6 @@
         </article>
     
         
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/12/20/k线实现技术总结/">k线实现技术总结</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Dec 20 2016 13:08:22 GMT+0800">
-	
-		    12月 20, 2016
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>CAShaperLayer+UIBezierPath</p>
-<p>CAShaperLayer相对CALayer对了fillcolor和strokColor以及path功能。可以根据BezierPath绘制出不同颜色不同，任意形状的图形,且，CALayer底层实现不同于CG，它是基于GPU实现的。底层是直接调用GPU函数实现绘制功能。性能高于CG.<br></p>
-                        
-                            <a href="/2016/12/20/k线实现技术总结/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/kline.png"/>
-                </div>
-                
-            
-        </article>
-    
-        
         <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
@@ -583,6 +543,42 @@ TestClasss *newInstance = (TestClasss *)address;
                                     注释和共享
                                 </a>
                             </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2016/02/17/ios性能优化技巧/">ios性能优化技巧</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Feb 17 2016 15:01:09 GMT+0800">
+	
+		    2月 17, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
+<p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
+<p>3.不要阻塞主线程。<br></p>
+                        
+                            <a href="/2016/02/17/ios性能优化技巧/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
                         
                     </div>
                 
