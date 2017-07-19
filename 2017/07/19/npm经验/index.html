@@ -6,31 +6,55 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>ios启动的几个方法顺序 - 六月里的辣椒</title>
+    <title>npm经验 - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
-1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
+    <meta name="description" content="前提条件：homebrew已安装
+
+brew upgrade node 
+
+usr/local/Cellar/node/7.2.1/bin/node
+
+usr/local/Cellar/node/7.2.1/libexec/npm/bin/npm
+
+cd 到 usr/local/bin ,执行 ln -s usr/local/Cellar/node/7.2.1/bin/node node  
+
+执">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ios启动的几个方法顺序">
-<meta property="og:url" content="http://yoursite.com/2017/07/12/ios启动的几个方法顺序/index.html">
+<meta property="og:title" content="npm经验">
+<meta property="og:url" content="http://yoursite.com/2017/07/19/npm经验/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
-1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
-<meta property="og:updated_time" content="2017-07-12T03:21:11.000Z">
+<meta property="og:description" content="前提条件：homebrew已安装
+
+brew upgrade node 
+
+usr/local/Cellar/node/7.2.1/bin/node
+
+usr/local/Cellar/node/7.2.1/libexec/npm/bin/npm
+
+cd 到 usr/local/bin ,执行 ln -s usr/local/Cellar/node/7.2.1/bin/node node  
+
+执">
+<meta property="og:updated_time" content="2017-07-19T03:12:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios启动的几个方法顺序">
-<meta name="twitter:description" content="1- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
-1- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&amp;lt;N">
+<meta name="twitter:title" content="npm经验">
+<meta name="twitter:description" content="前提条件：homebrew已安装
+
+brew upgrade node 
+
+usr/local/Cellar/node/7.2.1/bin/node
+
+usr/local/Cellar/node/7.2.1/libexec/npm/bin/npm
+
+cd 到 usr/local/bin ,执行 ln -s usr/local/Cellar/node/7.2.1/bin/node node  
+
+执">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
-    
-        <meta property="og:image" content="/2017/07/12/ios启动的几个方法顺序/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/07/12/ios启动的几个方法顺序/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -195,13 +219,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ios启动的几个方法顺序
+            npm经验
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 12 2017 11:19:27 GMT+0800">
+    <time itemprop="datePublished" content="Wed Jul 19 2017 11:10:01 GMT+0800">
 	
-		    7月 12, 2017
+		    7月 19, 2017
     	
     </time>
     
@@ -210,10 +234,26 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(<span class="variable">BOOL</span>)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application didFinishLaunchingWithOptions:<span class="params">(<span class="variable">NSDictionary</span> *)</span>launchOptions;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)app openURL:(<span class="built_in">NSURL</span> *)url options:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span>*, <span class="keyword">id</span>&gt; *)options;</span><br></pre></td></tr></table></figure>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(<span class="variable">BOOL</span>)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application openURL:<span class="params">(<span class="variable">NSURL</span> *)</span>url sourceApplication:<span class="params">(<span class="variable">NSString</span> *)</span>sourceApplication annotation:<span class="params">(id)</span>annotation</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pp">- <span class="params">(void)</span>application:<span class="params">(<span class="variable">UIApplication</span> *)</span>application didReceiveRemoteNotification:<span class="params">(<span class="variable">NSDictionary</span> *)</span>userInfo</span></span><br></pre></td></tr></table></figure>
+            <p>前提条件：<br>homebrew已安装</p>
+<ul>
+<li><p>brew upgrade node </p>
+</li>
+<li><p>usr/local/Cellar/node/7.2.1/bin/node</p>
+</li>
+<li><p>usr/local/Cellar/node/7.2.1/libexec/npm/bin/npm</p>
+</li>
+<li><p>cd 到 <code>usr/local/bin</code> ,执行 <code>ln -s usr/local/Cellar/node/7.2.1/bin/node node</code>  </p>
+</li>
+<li><p>执行 <code>ln -s usr/local/Cellar/node/7.2.1/libexec/npm/bin/npm npm</code></p>
+</li>
+<li><p>node -v </p>
+</li>
+<li><p>npm -v</p>
+</li>
+<li><p>搞定</p>
+</li>
+</ul>
+
             
                 
 
@@ -227,7 +267,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/npm经验/"  data-tooltip="npm经验">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -235,7 +275,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/" data-tooltip="Chisel笔记">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/12/ios启动的几个方法顺序/" data-tooltip="ios启动的几个方法顺序">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -250,17 +290,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -301,7 +341,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/npm经验/"  data-tooltip="npm经验">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -309,7 +349,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/07/Chisel笔记/" data-tooltip="Chisel笔记">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/12/ios启动的几个方法顺序/" data-tooltip="ios启动的几个方法顺序">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -324,17 +364,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -360,17 +400,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/12/ios启动的几个方法顺序/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/npm经验/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
