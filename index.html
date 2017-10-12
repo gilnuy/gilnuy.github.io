@@ -191,6 +191,94 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2017/10/12/ios-string-to-block/">ios string to block</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Oct 12 2017 10:14:42 GMT+0800">
+	
+		    10月 12, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                    </div>
+                    
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>假设有一个方法的字符串<br>testinvokeBlock 和 类名 TestUtil</p>
+<p>如何转换成block调用呢  </p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">NSString</span> *str = @<span class="string">"testinvokeBlock"</span>;</span><br><span class="line"><span class="type">Class</span> cls = <span class="type">NSClassFromString</span>(@<span class="string">"TestUtil"</span>);</span><br><span class="line"><span class="type">SEL</span> sel = <span class="type">NSSelectorFromString</span>(str);</span><br><span class="line">id(*blk)(id,sel) = (<span class="type">void</span> *)objc_msgSend;</span><br><span class="line"><span class="type">void</span>(^)(<span class="type">void</span>)<span class="literal">result</span> = blk(cls,sel);</span><br></pre></td></tr></table></figure>
+<p>result为最后的block.</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2017/10/12/ios-string-to-block/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2017/07/19/问题解决办法/">问题解决办法</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jul 19 2017 15:14:27 GMT+0800">
+	
+		    7月 19, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>Settings - User下添加</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"repository_channels"</span>: [</span><br><span class="line">    <span class="string">"http://sublime.wbond.net/repositories.json"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2017/07/19/问题解决办法/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2017/07/19/npm经验/">npm经验</a>
                         
                     </h1>
@@ -560,80 +648,6 @@
             
         </article>
     
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2017/01/18/dealloc内部原理/">dealloc内部原理</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jan 18 2017 10:35:39 GMT+0800">
-	
-		    1月 18, 2017
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.调用 -release ：引用计数变为零</span><br><span class="line"> <span class="keyword">*</span> 对象正在被销毁，生命周期即将结束.</span><br><span class="line"> <span class="keyword">*</span> 不能再有新的 __weak 弱引用，否则将指向 nil.</span><br><span class="line"> <span class="keyword">*</span> 调用 [self dealloc]</span><br><span class="line">2. 父类调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 继承关系中最直接继承的父类再调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 如果是 MRC 代码 则会手动释放实例变量们（iVars）</span><br><span class="line"> <span class="keyword">*</span> 继承关系中每一层的父类 都再调用 -dealloc</span><br><span class="line">3. NSObject 调 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 只做一件事：调用 Objective-C runtime 中的 object_dispose() 方法</span><br><span class="line">4. 调用 object_dispose()</span><br><span class="line"> <span class="keyword">*</span> 为 C++ 的实例变量们（iVars）调用 destructors</span><br><span class="line"> <span class="keyword">*</span> 为 ARC 状态下的 实例变量们（iVars） 调用 -release</span><br><span class="line"> <span class="keyword">*</span> 解除所有使用 runtime Associate方法关联的对象</span><br><span class="line"> <span class="keyword">*</span> 解除所有 __weak 引用</span><br><span class="line"> <span class="keyword">*</span> 调用 free()</span><br></pre></td></tr></table></figure>
-                        
-                            <a href="/2017/01/18/dealloc内部原理/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-                <div class="postShorten-thumbnailimg">
-                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
-                </div>
-                
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/12/20/探究NSMutableDictinory和NSMutableArray的底层实现原理/">探究NSMutableArray的实现原理</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Dec 20 2016 15:13:14 GMT+0800">
-	
-		    12月 20, 2016
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>参考链接:<br><a href="http://ciechanowski.me/blog/2014/03/05/exposing-nsmutablearray/">NSMutableArray分析</a><br><a href="https://github.com/Ciechan">他的github主页</a></p>
-<h3 id="古老的C数组:">古老的C数组:</h3><p>优点:查询速度很快，直接通过下表找到对应的值<br>缺点:修改、删除数据很慢，需要移动基于所有的其他的元素<br></p>
-                        
-                            <a href="/2016/12/20/探究NSMutableDictinory和NSMutableArray的底层实现原理/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -645,7 +659,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 1 页 共 3 页</li>
+        <li class="pagination-number">第 1 页 共 4 页</li>
     </ul>
 </div>
 

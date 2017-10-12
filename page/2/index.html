@@ -186,6 +186,80 @@
 <section class="postShorten-group main-content-wrap">
     
         
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2017/01/18/dealloc内部原理/">dealloc内部原理</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jan 18 2017 10:35:39 GMT+0800">
+	
+		    1月 18, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.调用 -release ：引用计数变为零</span><br><span class="line"> <span class="keyword">*</span> 对象正在被销毁，生命周期即将结束.</span><br><span class="line"> <span class="keyword">*</span> 不能再有新的 __weak 弱引用，否则将指向 nil.</span><br><span class="line"> <span class="keyword">*</span> 调用 [self dealloc]</span><br><span class="line">2. 父类调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 继承关系中最直接继承的父类再调用 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 如果是 MRC 代码 则会手动释放实例变量们（iVars）</span><br><span class="line"> <span class="keyword">*</span> 继承关系中每一层的父类 都再调用 -dealloc</span><br><span class="line">3. NSObject 调 -dealloc</span><br><span class="line"> <span class="keyword">*</span> 只做一件事：调用 Objective-C runtime 中的 object_dispose() 方法</span><br><span class="line">4. 调用 object_dispose()</span><br><span class="line"> <span class="keyword">*</span> 为 C++ 的实例变量们（iVars）调用 destructors</span><br><span class="line"> <span class="keyword">*</span> 为 ARC 状态下的 实例变量们（iVars） 调用 -release</span><br><span class="line"> <span class="keyword">*</span> 解除所有使用 runtime Associate方法关联的对象</span><br><span class="line"> <span class="keyword">*</span> 解除所有 __weak 引用</span><br><span class="line"> <span class="keyword">*</span> 调用 free()</span><br></pre></td></tr></table></figure>
+                        
+                            <a href="/2017/01/18/dealloc内部原理/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+                <div class="postShorten-thumbnailimg">
+                    <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                </div>
+                
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2016/12/20/探究NSMutableDictinory和NSMutableArray的底层实现原理/">探究NSMutableArray的实现原理</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Dec 20 2016 15:13:14 GMT+0800">
+	
+		    12月 20, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>参考链接:<br><a href="http://ciechanowski.me/blog/2014/03/05/exposing-nsmutablearray/">NSMutableArray分析</a><br><a href="https://github.com/Ciechan">他的github主页</a></p>
+<h3 id="古老的C数组:">古老的C数组:</h3><p>优点:查询速度很快，直接通过下表找到对应的值<br>缺点:修改、删除数据很慢，需要移动基于所有的其他的元素<br></p>
+                        
+                            <a href="/2016/12/20/探究NSMutableDictinory和NSMutableArray的底层实现原理/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
         <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
             <div class="postShorten-wrap">
                 <div class="postShorten-header">
@@ -514,77 +588,6 @@ TestClasss *newInstance = (TestClasss *)address;
             
         </article>
     
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/02/17/ios性能优化技巧/">ios性能优化技巧</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Feb 17 2016 15:01:09 GMT+0800">
-	
-		    2月 17, 2016
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
-<p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
-<p>3.不要阻塞主线程。<br></p>
-                        
-                            <a href="/2016/02/17/ios性能优化技巧/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2016/02/16/headerdoc/">headerdoc</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Feb 16 2016 14:55:51 GMT+0800">
-	
-		    2月 16, 2016
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>本文主要介绍如何利用xcode自带工具headerdoc文档化代码</p>
-<h3 id="核心命令">核心命令</h3><p>headerdoc2html -o ~/Desktop/documentation *.h<br>gatherheaderdoc .<br><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a><br></p>
-                        
-                            <a href="/2016/02/16/headerdoc/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -605,7 +608,7 @@ TestClasss *newInstance = (TestClasss *)address;
             </a>
         </li>
         
-        <li class="pagination-number">第 2 页 共 3 页</li>
+        <li class="pagination-number">第 2 页 共 4 页</li>
     </ul>
 </div>
 

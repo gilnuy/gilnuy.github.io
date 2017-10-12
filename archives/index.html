@@ -192,6 +192,54 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2017/10/12/ios-string-to-block/">ios string to block</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Oct 12 2017 10:14:42 GMT+0800">
+	
+		    10月 12, 2017
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
+                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
+                    </div>
+                    
+                
+                
+                    <div class="postShorten-content" itemprop="articleBody">
+                        <p>假设有一个方法的字符串<br>testinvokeBlock 和 类名 TestUtil</p>
+<p>如何转换成block调用呢  </p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">NSString</span> *str = @<span class="string">"testinvokeBlock"</span>;</span><br><span class="line"><span class="type">Class</span> cls = <span class="type">NSClassFromString</span>(@<span class="string">"TestUtil"</span>);</span><br><span class="line"><span class="type">SEL</span> sel = <span class="type">NSSelectorFromString</span>(str);</span><br><span class="line">id(*blk)(id,sel) = (<span class="type">void</span> *)objc_msgSend;</span><br><span class="line"><span class="type">void</span>(^)(<span class="type">void</span>)<span class="literal">result</span> = blk(cls,sel);</span><br></pre></td></tr></table></figure>
+<p>result为最后的block.</p>
+
+                        
+                            
+
+                        
+                        
+                            <p>
+                                <a href="/2017/10/12/ios-string-to-block/#post-footer" class="postShorten-excerpt_link link">
+                                    注释和共享
+                                </a>
+                            </p>
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2017/07/19/问题解决办法/">问题解决办法</a>
                         
                     </h1>
@@ -216,50 +264,6 @@
                         
                             <p>
                                 <a href="/2017/07/19/问题解决办法/#post-footer" class="postShorten-excerpt_link link">
-                                    注释和共享
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2017/07/19/repository-channels/">repository_channels:</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jul 19 2017 15:13:19 GMT+0800">
-	
-		    7月 19, 2017
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                    <div class="postShorten-thumbnailimg postShorten-thumbnailimg--bottom">
-                        <img alt="" itemprop="image" src="http://yanlj.qiniudn.com/test.jpg"/>
-                    </div>
-                    
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2017/07/19/repository-channels/#post-footer" class="postShorten-excerpt_link link">
                                     注释和共享
                                 </a>
                             </p>

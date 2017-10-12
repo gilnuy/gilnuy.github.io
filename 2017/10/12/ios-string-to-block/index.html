@@ -6,28 +6,34 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>repository_channels: - 六月里的辣椒</title>
+    <title>ios string to block - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="期待">
+    <meta name="description" content="假设有一个方法的字符串testinvokeBlock 和 类名 TestUtil
+如何转换成block调用呢  
+12345NSString *str = @&quot;testinvokeBlock&quot;;Class cls = NSClassFromString(@&quot;TestUtil&quot;);SEL sel = NSSelectorFromString(str);id(*blk)(id,sel) = (void">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="repository_channels:">
-<meta property="og:url" content="http://yoursite.com/2017/07/19/repository-channels/index.html">
+<meta property="og:title" content="ios string to block">
+<meta property="og:url" content="http://yoursite.com/2017/10/12/ios-string-to-block/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="期待">
-<meta property="og:updated_time" content="2017-07-19T07:13:19.000Z">
+<meta property="og:description" content="假设有一个方法的字符串testinvokeBlock 和 类名 TestUtil
+如何转换成block调用呢  
+12345NSString *str = @&quot;testinvokeBlock&quot;;Class cls = NSClassFromString(@&quot;TestUtil&quot;);SEL sel = NSSelectorFromString(str);id(*blk)(id,sel) = (void">
+<meta property="og:updated_time" content="2017-10-12T02:23:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="repository_channels:">
-<meta name="twitter:description" content="期待">
+<meta name="twitter:title" content="ios string to block">
+<meta name="twitter:description" content="假设有一个方法的字符串testinvokeBlock 和 类名 TestUtil
+如何转换成block调用呢  
+12345NSString *str = @&quot;testinvokeBlock&quot;;Class cls = NSClassFromString(@&quot;TestUtil&quot;);SEL sel = NSSelectorFromString(str);id(*blk)(id,sel) = (void">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
     
-        <meta property="og:image" content="/2017/07/19/repository-channels/http://yanlj.qiniudn.com/test.jpg"/>
-        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/07/19/repository-channels/http://yanlj.qiniudn.com/test.jpg" />
+        <meta property="og:image" content="/2017/10/12/ios-string-to-block/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2017/10/12/ios-string-to-block/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -192,13 +198,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            repository_channels:
+            ios string to block
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 19 2017 15:13:19 GMT+0800">
+    <time itemprop="datePublished" content="Thu Oct 12 2017 10:14:42 GMT+0800">
 	
-		    7月 19, 2017
+		    10月 12, 2017
     	
     </time>
     
@@ -207,7 +213,11 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>假设有一个方法的字符串<br>testinvokeBlock 和 类名 TestUtil</p>
+<p>如何转换成block调用呢  </p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">NSString</span> *str = @<span class="string">"testinvokeBlock"</span>;</span><br><span class="line"><span class="type">Class</span> cls = <span class="type">NSClassFromString</span>(@<span class="string">"TestUtil"</span>);</span><br><span class="line"><span class="type">SEL</span> sel = <span class="type">NSSelectorFromString</span>(str);</span><br><span class="line">id(*blk)(id,sel) = (<span class="type">void</span> *)objc_msgSend;</span><br><span class="line"><span class="type">void</span>(^)(<span class="type">void</span>)<span class="literal">result</span> = blk(cls,sel);</span><br></pre></td></tr></table></figure>
+<p>result为最后的block.</p>
+
             
                 
 
@@ -221,7 +231,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/问题解决办法/"  data-tooltip="问题解决办法">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -229,7 +239,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/npm经验/" data-tooltip="npm经验">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/问题解决办法/" data-tooltip="问题解决办法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -244,17 +254,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -295,7 +305,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/问题解决办法/"  data-tooltip="问题解决办法">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -303,7 +313,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/npm经验/" data-tooltip="npm经验">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/07/19/问题解决办法/" data-tooltip="问题解决办法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -318,17 +328,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -354,17 +364,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/07/19/repository-channels/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2017/10/12/ios-string-to-block/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

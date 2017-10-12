@@ -192,6 +192,77 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
+                                <a class="link-unstyled" href="/2016/02/17/ios性能优化技巧/">ios性能优化技巧</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Feb 17 2016 15:01:09 GMT+0800">
+	
+		    2月 17, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>转载:<a href="http://www.devqinwei.com/2015/12/02/多贴总结-ios性能优化技巧/">秦威的学习与分享 (多帖总结) iOS性能优化技巧</a><br>1.避免对UIView使用透明。（UIView默认是非透明）。原因是透明对性能要求较高，如果在滚动时页面比较复杂，体验上的差异会相对明显。</p>
+<p>2.避免过于庞大的xib。（如果不得不使用一个ViewController作为xib,也应该将其其中的子视图拆成小的xib）。<br>需要注意的是，当你加载一个XIB的时候所有内容都被放在了内存里，包括任何图片。如果有一个不会即刻用到的view，你这就是在浪费宝贵的内存资源了。Storyboards就是另一码事儿了，storyboard仅在需要时实例化一个view controller.</p>
+<p>3.不要阻塞主线程。<br></p>
+                        
+                            <a href="/2016/02/17/ios性能优化技巧/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2016/02/16/headerdoc/">headerdoc</a>
+                        
+                    </h1>
+                    <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 16 2016 14:55:51 GMT+0800">
+	
+		    2月 16, 2016
+    	
+    </time>
+    
+</div>
+                </div>
+                
+                
+                    <div class="postShorten-excerpt" itemprop="articleBody">
+                        <p>本文主要介绍如何利用xcode自带工具headerdoc文档化代码</p>
+<h3 id="核心命令">核心命令</h3><p>headerdoc2html -o ~/Desktop/documentation *.h<br>gatherheaderdoc .<br><a href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a><br></p>
+                        
+                            <a href="/2016/02/16/headerdoc/" class="postShorten-excerpt_link link">
+                                阅读全文
+                            </a>
+                            
+                        
+                    </div>
+                
+            </div>
+            
+        </article>
+    
+        
+        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+            <div class="postShorten-wrap">
+                <div class="postShorten-header">
+                    <h1 class="postShorten-title" itemprop="headline">
+                        
                                 <a class="link-unstyled" href="/2015/12/22/ios-sqlite-文件加密/">ios sqlite 文件加密</a>
                         
                     </h1>
@@ -486,40 +557,6 @@
             
         </article>
     
-        
-        <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/11/16/my-first-hexo-blog/">Git 常用命令</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Nov 16 2015 13:55:42 GMT+0800">
-	
-		    11月 16, 2015
-    	
-    </time>
-    
-</div>
-                </div>
-                
-                
-                    <div class="postShorten-excerpt" itemprop="articleBody">
-                        <p>Git配置<br>git config –global user.name “robbin”<br>git config –global user.email “fankai@gmail.com”<br>git config –global color.ui true<br>git config –global alias.co checkout<br>git config –global alias.ci commit<br>git config –global alias.st status<br>git config –global alias.br branch<br>git config –global core.editor “mate -w”    # 设置Editor使用textmate<br>git config -l  # 列举所有配置<br>用户的git配置文件~/.gitconfig<br></p>
-                        
-                            <a href="/2015/11/16/my-first-hexo-blog/" class="postShorten-excerpt_link link">
-                                阅读全文
-                            </a>
-                            
-                        
-                    </div>
-                
-            </div>
-            
-        </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -533,7 +570,14 @@
         </li>
         
         
-        <li class="pagination-number">第 3 页 共 3 页</li>
+        <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="/archives/page/4/">
+                    <span>下一页</span>
+                <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+        </li>
+        
+        <li class="pagination-number">第 3 页 共 4 页</li>
     </ul>
 </div>
 
