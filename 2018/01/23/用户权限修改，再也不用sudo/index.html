@@ -6,25 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="六月里的辣椒">
-    <title>UILable断字 - 六月里的辣椒</title>
+    <title>用户权限修改，再也不用sudo - 六月里的辣椒</title>
     <meta name="author" content="running pig">
     
     
-    <meta name="description" content="TTTAttributedLabel可设置垂直顶部对齐，底部对齐，居中">
+    <meta name="description" content="为当前账户添加node_modules目录读写权限即可。   
+1sudo chown -R $(whoami) ~/.npm">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="UILable断字">
-<meta property="og:url" content="http://yoursite.com/2015/11/30/UILable断字/index.html">
+<meta property="og:title" content="用户权限修改，再也不用sudo">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/index.html">
 <meta property="og:site_name" content="六月里的辣椒">
-<meta property="og:description" content="TTTAttributedLabel可设置垂直顶部对齐，底部对齐，居中">
-<meta property="og:updated_time" content="2015-12-18T08:34:42.000Z">
+<meta property="og:description" content="为当前账户添加node_modules目录读写权限即可。   
+1sudo chown -R $(whoami) ~/.npm">
+<meta property="og:updated_time" content="2018-01-23T08:05:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UILable断字">
-<meta name="twitter:description" content="TTTAttributedLabel可设置垂直顶部对齐，底部对齐，居中">
+<meta name="twitter:title" content="用户权限修改，再也不用sudo">
+<meta name="twitter:description" content="为当前账户添加node_modules目录读写权限即可。   
+1sudo chown -R $(whoami) ~/.npm">
     
     
     
         <meta property="og:image" content="/assets/images/head.jpg"/>
     
+    
+        <meta property="og:image" content="/2018/01/23/用户权限修改，再也不用sudo/http://yanlj.qiniudn.com/test.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/http://yanlj.qiniudn.com/test.jpg" />
     
     
     
@@ -189,13 +195,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            UILable断字
+            用户权限修改，再也不用sudo
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Nov 30 2015 16:54:48 GMT+0800">
+    <time itemprop="datePublished" content="Tue Jan 23 2018 16:04:03 GMT+0800">
 	
-		    11月 30, 2015
+		    1月 23, 2018
     	
     </time>
     
@@ -204,12 +210,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel" target="_blank" rel="external">TTTAttributedLabel</a><br>可设置垂直顶部对齐，底部对齐，居中<br><a id="more"></a></p>
-<p>断字:<br><code>NSString *testStr = @&quot;QQ啊:回复QQ啊:dsahjkfhjkfhjkfdshkjdfshjkfdashjkdfhsjkhkdfshkjsdafhjkdsfahjfhjdhjkdsfhjkds&quot;;</code><br>iphone显示效果为:<br>   QQ啊:回复QQ<br>   啊:dsahjkfhjkfhjkfdshkjdfshjkfdashjkdfhsjkhkdfshkjsdafhjkdsfahjfhjdhjkdsfhjkds</p>
-<p>系统绘制文字时的断字功能，UILable，UITextView都是如此。</p>
-<p>Label具体绘制过程为:<br>CTFrameSetter 根据 AttibuteDictionary 和 view的frame 以及text，合成CTFrame，<br>CTFrame由大量的CTRun组成，每个CTRun定义了文字的内容，绘制区域，颜色，字体。</p>
-<p>CTFrame提供遍历CTLine的方法，不停的绘制CTLine<br>如果是最后一个CTLine，则为最后一行，判断结束符是…还是不要..</p>
-
+            <p>为当前账户添加node_modules目录读写权限即可。   </p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) ~/.<span class="built_in">npm</span></span><br></pre></td></tr></table></figure>
             
                 
 
@@ -223,7 +225,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/UIView-部分圆角/"  data-tooltip="UIView 部分圆角">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -231,7 +233,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/30/转载各种实用链接/" data-tooltip="转载各种实用链接">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/12/ios-string-to-block/" data-tooltip="ios string to block">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -246,17 +248,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -297,7 +299,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/04/UIView-部分圆角/"  data-tooltip="UIView 部分圆角">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -305,7 +307,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/30/转载各种实用链接/" data-tooltip="转载各种实用链接">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/10/12/ios-string-to-block/" data-tooltip="ios string to block">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -320,17 +322,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -356,17 +358,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2015/11/30/UILable断字/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://yoursite.com/2018/01/23/用户权限修改，再也不用sudo/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
